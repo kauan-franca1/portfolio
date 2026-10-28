@@ -1,162 +1,840 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#111111">
-<title>Do Ruído ao Movimento — Joy Division / New Order</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kauan Silva França — Portfólio</title>
+<meta name="description" content="Desenvolvedor & Analista de Dados — integrações, automação e IA aplicada com Python, Java, SQL e ERP Sankhya.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap');
-:root{--bg:#111;--paper:#eeeae2;--ink:#151515;--muted:#aaa79f;--line:rgba(238,234,226,.22);--acid:#d7ff3f;--blue:#4c7cff;--red:#ff5b4d;--serif:Georgia,serif;--display:'Barlow Condensed',Impact,sans-serif;--mono:'DM Mono',monospace;--body:Inter,Arial,sans-serif;--progress:0}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--bg);color:var(--paper);font-family:var(--body);overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:.68rem}.muted{color:var(--muted)}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.topbar{position:fixed;z-index:20;inset:0 0 auto;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 26px;background:rgba(17,17,17,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;letter-spacing:.02em;font-size:1.05rem}.brand-mark{width:25px;height:25px;border:1px solid var(--acid);display:grid;place-items:center;color:var(--acid);font:500 .7rem var(--mono)}nav{display:flex;gap:24px;align-items:center}nav a{font: .64rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#c8c5bd;transition:color .2s}nav a:hover{color:var(--acid)}.menu-toggle{display:none;background:none;color:var(--paper);border:1px solid var(--line);padding:8px 10px}.hero{min-height:100svh;position:relative;display:flex;align-items:center;padding:130px 0 80px;overflow:hidden;background:radial-gradient(ellipse at 75% 50%,#292a24 0,transparent 43%),#111}.hero:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E")}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;align-items:center;position:relative;z-index:1}.eyebrow{display:flex;align-items:center;gap:12px;color:var(--acid);margin-bottom:25px}.eyebrow:before{content:"";width:32px;height:1px;background:currentColor}.hero h1{font:900 clamp(4.8rem,10.8vw,10rem)/.78 var(--display);letter-spacing:-.045em;text-transform:uppercase;margin:0 0 30px;max-width:800px}.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1px var(--paper);padding-top:.11em}.hero h1 em{font-style:normal;color:var(--acid)}.hero-copy{max-width:440px;color:#c4c1b9;line-height:1.7;font-size:.96rem}.hero-meta{display:flex;gap:24px;margin-top:34px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted)}.hero-art{position:relative;aspect-ratio:1;max-width:530px;width:100%;margin:auto}.orbit{position:absolute;border:1px solid rgba(215,255,63,.3);border-radius:50%;inset:5%;animation:spin 30s linear infinite}.orbit:before,.orbit:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--acid);top:15%;left:20%;box-shadow:0 0 20px var(--acid)}.orbit:after{top:auto;left:auto;bottom:9%;right:25%;width:4px;height:4px}.orbit.two{inset:17%;border-color:rgba(238,234,226,.22);animation-direction:reverse;animation-duration:23s}.orbit.three{inset:30%;border-style:dashed;border-color:rgba(238,234,226,.18);animation-duration:50s}.signal{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 0 8px rgba(215,255,63,.15))}.hero-stamp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:32%;aspect-ratio:1;border-radius:50%;background:var(--acid);color:#111;display:grid;place-items:center;text-align:center;font:800 clamp(1rem,2.2vw,2rem)/.85 var(--display);letter-spacing:-.04em}.scroll-note{position:absolute;bottom:28px;left:26px;color:var(--muted);display:flex;gap:12px;align-items:center}.scroll-note:before{content:"";width:38px;height:1px;background:var(--acid)}.section{padding:120px 0;position:relative}.section.light{background:var(--paper);color:var(--ink)}.section.blue{background:#263d9a;color:#fff}.section.red{background:#d34a3d;color:#171717}.section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:40px;align-items:start;margin-bottom:64px}.kicker{color:var(--acid);margin-top:10px}.light .kicker,.red .kicker{color:#4e6510}.section h2{font:800 clamp(3rem,7vw,6.8rem)/.82 var(--display);letter-spacing:-.035em;text-transform:uppercase;margin:0}.section h2 .outline{color:transparent;-webkit-text-stroke:1px currentColor}.intro{font-size:1.1rem;line-height:1.75;max-width:660px;color:#b7b4ac}.light .intro{color:#59574f}.chapter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.chapter{padding:28px;background:#151515;min-height:245px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s,transform .3s}.chapter:hover{background:#22241b}.chapter .year{color:var(--acid)}.chapter h3{font:700 2rem/.95 var(--display);text-transform:uppercase;margin:35px 0 12px}.chapter p{color:#aaa79f;font-size:.86rem;line-height:1.65;margin:0}.chapter .tag{font: .6rem var(--mono);text-transform:uppercase;color:#77756d;letter-spacing:.1em}.timeline{position:relative;margin-top:15px}.timeline:before{content:"";position:absolute;left:100px;top:0;bottom:0;width:1px;background:rgba(21,21,21,.22)}.event{display:grid;grid-template-columns:100px 1fr;gap:36px;padding:0 0 45px;position:relative}.event:last-child{padding-bottom:0}.event:before{content:"";position:absolute;left:95px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--ink);border:3px solid var(--paper);box-shadow:0 0 0 1px var(--ink)}.event-year{font:800 1.55rem var(--display)}.event-content{border-bottom:1px solid rgba(21,21,21,.16);padding-bottom:28px}.event-content h3{font:700 1.8rem var(--display);text-transform:uppercase;margin:0 0 8px}.event-content p{max-width:720px;color:#55534d;line-height:1.7;margin:0}.event-content .mono{color:#6a6a60;margin-bottom:10px;display:block}.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}.compare-panel{padding:36px;min-height:390px;position:relative;overflow:hidden;border:1px solid var(--line)}.compare-panel.jd{background:#1a1a1a}.compare-panel.no{background:#d7ff3f;color:#111;border-color:#d7ff3f}.compare-panel .big-number{position:absolute;right:-12px;top:-50px;font:900 15rem/.9 var(--display);opacity:.07}.compare-panel h3{font:800 clamp(2.5rem,5vw,4.7rem)/.85 var(--display);text-transform:uppercase;margin:25px 0}.compare-panel p{max-width:410px;line-height:1.7;color:#c0bdb5}.compare-panel.no p{color:#33382b}.spec-list{margin-top:32px;display:grid;gap:14px}.spec{display:grid;grid-template-columns:100px 1fr;gap:12px;border-top:1px solid currentColor;padding-top:12px;font-size:.83rem}.spec b{font: .65rem var(--mono);text-transform:uppercase;letter-spacing:.08em}.spec span{opacity:.8}.sequencer-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}.sequencer-copy h3{font:800 3.2rem/.85 var(--display);text-transform:uppercase;margin:0 0 20px}.sequencer-copy p{line-height:1.75;color:#b6b3ab}.controls{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0}.btn{border:1px solid var(--line);background:transparent;color:var(--paper);padding:12px 17px;font: .66rem var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:.2s}.btn:hover,.btn.active{background:var(--acid);border-color:var(--acid);color:#111}.btn.primary{background:var(--acid);color:#111;border-color:var(--acid)}.seq-machine{border:1px solid var(--line);padding:24px;background:#171717}.seq-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.led{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acid);margin-right:8px;box-shadow:0 0 8px var(--acid)}.wave-wrap{height:110px;background:#101010;border:1px solid #34352e;margin-bottom:18px;position:relative;overflow:hidden}.wave-wrap canvas{width:100%;height:100%;display:block}.steps{display:grid;grid-template-columns:repeat(16,1fr);gap:5px}.step{aspect-ratio:1;border:1px solid #45463c;background:#25261f;cursor:pointer;padding:0;position:relative}.step:nth-child(4n+1){border-left-color:#77796a}.step.on{background:var(--acid);border-color:var(--acid)}.step.playing{outline:2px solid white;outline-offset:2px}.step.on:after{content:"";position:absolute;left:25%;right:25%;bottom:15%;height:25%;background:#171717}.track-row{display:grid;grid-template-columns:70px 1fr;align-items:center;gap:10px;margin:12px 0}.track-label{font: .62rem var(--mono);color:#a9a69d;text-transform:uppercase}.track-row .steps{gap:4px}.seq-foot{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:20px;color:#96948c;font: .6rem var(--mono);text-transform:uppercase}.seq-foot input{accent-color:var(--acid);width:100px}.catalog-top{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{padding:10px 13px;border:1px solid rgba(21,21,21,.25);background:transparent;color:var(--ink);font: .63rem var(--mono);text-transform:uppercase;cursor:pointer}.filter.active,.filter:hover{background:var(--ink);color:var(--paper)}.records{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(21,21,21,.2);border:1px solid rgba(21,21,21,.2)}.record{background:var(--paper);padding:19px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;transition:background .2s}.record:hover{background:#fff}.record-art{height:90px;margin-bottom:18px;position:relative;overflow:hidden;background:#d9d5cc;display:flex;align-items:center;justify-content:center}.record-art:before{content:"";position:absolute;width:72px;height:72px;border:1px solid #161616;border-radius:50%}.record-art:after{content:"";position:absolute;width:35px;height:35px;background:#161616;border-radius:50%;opacity:.9}.record:nth-child(3n) .record-art{background:#c4d0ff}.record:nth-child(3n) .record-art:before{width:110px;height:35px;border-radius:0;transform:rotate(-25deg)}.record:nth-child(4n) .record-art{background:#d7ff3f}.record:nth-child(4n) .record-art:after{width:4px;height:100%;border-radius:0}.record h3{font:700 1.5rem/.9 var(--display);text-transform:uppercase;margin:0 0 8px}.record .meta{font: .61rem var(--mono);color:#66635c;text-transform:uppercase}.record p{font-size:.78rem;line-height:1.5;color:#5b5952;margin:10px 0 0}.factory-note{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:70px;padding-top:28px;border-top:1px solid rgba(21,21,21,.25)}.factory-note h3{font:800 2.5rem/.9 var(--display);text-transform:uppercase;margin:0}.factory-note p{color:#56544e;line-height:1.75;margin:0}.closing{min-height:65vh;display:flex;align-items:center;position:relative;overflow:hidden}.closing:before{content:"";position:absolute;width:60vw;height:60vw;border:1px solid rgba(215,255,63,.22);border-radius:50%;right:-15vw;top:-10vw;box-shadow:0 0 0 5vw rgba(215,255,63,.02),0 0 0 10vw rgba(215,255,63,.02),0 0 0 15vw rgba(215,255,63,.02)}.closing h2{font:900 clamp(4rem,12vw,11rem)/.78 var(--display);text-transform:uppercase;letter-spacing:-.05em;margin:25px 0;position:relative}.closing h2 span{color:var(--acid)}.closing p{max-width:550px;color:#bcb9b1;line-height:1.7;position:relative}.footer{padding:25px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:#89877f;font: .62rem var(--mono);text-transform:uppercase}.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}.reading-line{position:fixed;z-index:30;top:0;left:0;height:2px;width:calc(var(--progress)*1%);background:var(--acid)}.mobile-nav{display:none}
-@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:850px){nav{gap:13px}nav a{font-size:.56rem}.hero-grid{grid-template-columns:1fr .8fr}.hero h1{font-size:clamp(4.4rem,12vw,7rem)}.section-head{grid-template-columns:1fr;gap:24px}.chapter-grid{grid-template-columns:repeat(2,1fr)}.sequencer-layout{grid-template-columns:1fr;gap:30px}.records{grid-template-columns:repeat(2,1fr)}.compare-panel{padding:25px}.spec{grid-template-columns:80px 1fr}}@media(max-width:620px){.wrap{width:calc(100% - 36px)}.topbar{height:62px;padding:0 18px}.menu-toggle{display:block}nav{display:none;position:absolute;top:61px;left:0;right:0;padding:20px;background:#111;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}nav.open{display:flex}nav a{font-size:.7rem}.hero{padding:105px 0 80px;min-height:auto}.hero-grid{grid-template-columns:1fr;gap:22px}.hero h1{font-size:clamp(4.5rem,19vw,7rem)}.hero-art{width:76%;margin:10px auto 0}.hero-copy{font-size:.9rem}.hero-meta{gap:15px;flex-wrap:wrap}.scroll-note{left:18px;bottom:22px}.section{padding:82px 0}.section-head{margin-bottom:38px}.section h2{font-size:clamp(3.5rem,14vw,5.5rem)}.chapter-grid{grid-template-columns:1fr}.chapter{min-height:205px}.timeline:before{left:67px}.event{grid-template-columns:67px 1fr;gap:20px}.event:before{left:62px}.event-year{font-size:1.25rem}.event-content h3{font-size:1.5rem}.compare{grid-template-columns:1fr}.compare-panel{min-height:340px}.seq-machine{padding:13px}.steps{gap:3px}.step{min-width:0}.track-row{grid-template-columns:48px 1fr;gap:7px}.track-label{font-size:.5rem}.seq-foot{flex-wrap:wrap}.catalog-top{align-items:start;flex-direction:column}.records{grid-template-columns:repeat(2,minmax(0,1fr))}.record{padding:13px;min-height:215px}.record h3{font-size:1.3rem}.factory-note{grid-template-columns:1fr;gap:20px}.closing{min-height:55vh}.closing h2{font-size:clamp(4rem,18vw,7rem)}.footer{flex-direction:column}.hero-meta .mono{font-size:.58rem}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  :root{
+    --bg:#FAFAFA;
+    --bg-alt:#F1F1EF;
+    --surface:#FFFFFF;
+    --ink:#15161A;
+    --ink-soft:#63656E;
+    --line:rgba(21,22,26,0.10);
+    --accent:#000000;
+    --accent-ink:#000000;
+    --bg-dark:#0B0B0D;
+    --surface-dark:#18191D;
+    --paper:#F4F4F2;
+    --paper-soft:#9A9AA3;
+    --line-dark:rgba(244,244,242,0.12);
+    --radius:14px;
+    --ease:cubic-bezier(.16,.84,.44,1);
+  }
+
+  /* --- FORÇANDO LETRAS BRANCAS NO DARK THEME --- */
+  html[data-theme="dark"] {
+    --ink: #FFFFFF;
+    --ink-soft: #EBEBEB;
+    --paper: #FFFFFF;
+    --paper-soft: #EBEBEB;
+    --accent: #FFFFFF;
+    --accent-ink: #FFFFFF;
+    --line: rgba(244,244,242,0.12);
+  }
+
+  html[data-theme="dark"] body,
+  html[data-theme="dark"] h1,
+  html[data-theme="dark"] h2,
+  html[data-theme="dark"] h3,
+  html[data-theme="dark"] p,
+  html[data-theme="dark"] a,
+  html[data-theme="dark"] span,
+  html[data-theme="dark"] li,
+  html[data-theme="dark"] .tag,
+  html[data-theme="dark"] .proj-metric span,
+  html[data-theme="dark"] footer .wrap span,
+  html[data-theme="dark"] .proj-num {
+    color: #FFFFFF !important;
+  }
+  html[data-theme="dark"] .ink-soft { color: #EBEBEB !important; }
+
+  html[data-theme="dark"] .btn-accent,
+  html[data-theme="dark"] .btn-primary {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  .band-dark h2, .band-dark h3, .band-dark p, .band-dark span, .band-dark li, .band-dark .tag, .band-dark .t-date { color: #FFFFFF !important; }
+  .band-dark .ink-soft { color: #EBEBEB !important; }
+  /* --------------------------------------------- */
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Inter',sans-serif; font-size:17px; line-height:1.6;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  html[data-theme="dark"] body{ background:var(--bg-dark); }
+  button{ font-family:inherit; }
+
+  h1,h2,h3{ font-family:'Space Grotesk', sans-serif; margin:0; letter-spacing:-0.02em; font-weight:600; }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--accent-ink); display:inline-flex; align-items:center; gap:8px;
+  }
+  html[data-theme="dark"] .eyebrow{ color:var(--accent); }
+  .eyebrow::before{ content:""; width:6px;height:6px;border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(0,0,0,0.18); }
+
+  a{ color:inherit; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 32px; }
+  section{ position:relative; padding:120px 0; }
+  @media(max-width:640px){ section{ padding:80px 0; } .wrap{ padding:0 22px; } }
+
+  .band-dark{ background:var(--bg-dark); color:var(--paper); }
+  .band-dark .eyebrow{ color:#FFFFFF; }
+  .band-dark .eyebrow::before{ background:#FFFFFF; }
+  .ink-soft{ color:var(--ink-soft); }
+  .section-title{ font-size:clamp(30px,4.6vw,46px); margin-top:18px; }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:50; padding:22px 0;
+    transition:background .4s var(--ease), border-color .4s var(--ease), padding .3s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(250,250,250,0.72); backdrop-filter:blur(14px) saturate(160%); -webkit-backdrop-filter:blur(14px) saturate(160%);
+    border-color:var(--line); padding:14px 0;
+  }
+  html[data-theme="dark"] header.scrolled{ background:rgba(11,11,13,0.72); border-color:var(--line-dark); }
+  nav.wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; text-decoration:none; }
+  .nav-links{ display:flex; align-items:center; gap:34px; list-style:none; margin:0; padding:0; }
+  .nav-links a{ font-size:14px; text-decoration:none; color:var(--ink-soft); transition:color .25s var(--ease); position:relative; }
+  .nav-links a::after{ content:""; position:absolute; left:0; right:100%; bottom:-5px; height:1.5px; background:var(--accent); transition:right .35s var(--ease); }
+  .nav-links a:hover, .nav-links a.active{ color:var(--accent-ink); }
+  .nav-links a.active::after{ right:0; }
+  .nav-right{ display:flex; align-items:center; gap:12px; }
+  .theme-toggle{
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--surface);
+    display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink);
+    transition:transform .25s var(--ease), border-color .25s var(--ease);
+  }
+  .theme-toggle:hover{ transform:scale(1.06) rotate(12deg); border-color:var(--accent); }
+  html[data-theme="dark"] .theme-toggle{ background:var(--surface-dark); border-color:var(--line-dark); }
+  .theme-toggle svg{ width:16px; height:16px; }
+  @media(max-width:760px){ .nav-links{ display:none; } }
+
+  /* ---------- CURRENT / signature thread ---------- */
+  .current-rail{ position:fixed; top:0; left:28px; bottom:0; width:2px; z-index:40; background:var(--line); pointer-events:none; }
+  html[data-theme="dark"] .current-rail{ background:var(--line-dark); }
+  .current-fill{ position:absolute; top:0; left:0; width:100%; height:0%; background:linear-gradient(180deg, var(--accent), rgba(0,0,0,0.15)); transition:height .05s linear; }
+  .current-dot{ position:absolute; bottom:0; left:50%; transform:translate(-50%,50%); width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 5px rgba(0,0,0,0.20), 0 0 14px rgba(0,0,0,0.55); }
+  @media(max-width:900px){ .current-rail{ display:none; } }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex; align-items:center; gap:10px; padding:14px 26px; border-radius:999px;
+    font-family:'Inter'; font-size:14.5px; font-weight:500; text-decoration:none; cursor:pointer; border:1px solid transparent;
+    transition:transform .3s var(--ease), background .3s var(--ease), border-color .3s var(--ease);
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:var(--ink); color:var(--bg); }
+  .btn-ghost{ border-color:var(--line); color:var(--ink); background:transparent; }
+  html[data-theme="dark"] .btn-ghost{ border-color:var(--line-dark); }
+  .btn-ghost:hover{ border-color:var(--accent); }
+  .btn-accent{ background:var(--accent); color:#FFFFFF; }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding-top:220px; padding-bottom:100px; }
+  .hero h1{ font-size:clamp(42px,7.4vw,88px); line-height:1.02; margin-top:22px; }
+  .hero .role{ font-size:clamp(20px,2.6vw,28px); color:var(--ink-soft); font-family:'Space Grotesk'; font-weight:500; margin:14px 0 0; }
+  .rotator{ font-family:'IBM Plex Mono', monospace; font-size:15px; margin:14px 0 0; color:var(--ink-soft); min-height:24px; }
+  .rotator .word{ color:var(--ink); border-bottom:1px solid var(--accent); }
+  .caret{ display:inline-block; width:8px; height:17px; margin-left:3px; vertical-align:-3px; background:var(--ink); animation:blink 1s steps(1) infinite; }
+  @keyframes blink{ 50%{ opacity:0; } }
+  .hero p.desc{ max-width:580px; margin-top:22px; font-size:17px; color:var(--ink-soft); }
+  .hero .actions{ margin-top:38px; display:flex; gap:14px; flex-wrap:wrap; }
+
+  .hero-stats{ margin-top:56px; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .hero-stats div{ padding:22px 18px 22px 0; }
+  .hero-stats strong{ display:block; font-family:'Space Grotesk'; font-size:30px; font-weight:600; }
+  .hero-stats span{ font-size:13px; color:var(--ink-soft); }
+  @media(max-width:700px){ .hero-stats{ grid-template-columns:repeat(2,1fr); } }
+
+  .hero-visual{
+    margin-top:64px; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:var(--surface);
+    display:flex; align-items:center; justify-content:center; position:relative;
+  }
+  html[data-theme="dark"] .hero-visual{ border-color:var(--line-dark); background:var(--surface-dark); }
+  .bonsai-art{
+    font-family:'IBM Plex Mono', monospace; font-size:clamp(5px, 1.1vw, 12px); line-height:1.15; color:var(--ink);
+    text-align:center; margin:0; padding:60px 20px; user-select:none; white-space:pre;
+    transition:transform .6s var(--ease); will-change:transform;
+  }
+  .hero-visual .hint{ position:absolute; right:16px; bottom:12px; font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft); }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- SOBRE ---------- */
+  .sobre-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; margin-top:44px; align-items:start; }
+  .sobre-grid p{ margin:0 0 20px; color:var(--ink-soft); }
+  .sobre-grid p:last-child{ margin-bottom:0; }
+  @media(max-width:840px){ .sobre-grid{ grid-template-columns:1fr; gap:28px; } }
+
+  /* ---------- STACK ---------- */
+  .stack-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:52px; background:var(--line-dark); border:1px solid var(--line-dark); border-radius:var(--radius); overflow:hidden; }
+  @media(max-width:900px){ .stack-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:600px){ .stack-grid{ grid-template-columns:1fr; } }
+  .stack-cell{ background:var(--bg-dark); padding:32px; }
+  .stack-cell h3{ font-size:16px; color:#FFFFFF; margin-bottom:18px; }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:9px; }
+  .tag{
+    font-family:'IBM Plex Mono'; font-size:12.5px; padding:7px 12px; border:1px solid var(--line-dark); border-radius:7px;
+    color:var(--paper-soft); background:transparent; transition:border-color .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
+  }
+  button.tag{ cursor:pointer; position:relative; }
+  button.tag::after{ content:""; position:absolute; top:5px; right:5px; width:4px; height:4px; border-radius:50%; background:#FFFFFF; opacity:.55; }
+  .tag:hover{ border-color:#FFFFFF; color:#FFFFFF; transform:translateY(-1px); }
+  .stack-hint{ margin-top:18px; font-family:'IBM Plex Mono'; font-size:12.5px; }
+
+  /* ---------- PROJETOS ---------- */
+  .filters{ margin-top:40px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+  .chip{
+    font-family:'IBM Plex Mono'; font-size:12.5px; letter-spacing:.04em; padding:9px 15px; border-radius:999px;
+    border:1px solid var(--line); background:transparent; color:var(--ink); cursor:pointer;
+    transition:background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+  }
+  .chip:hover{ border-color:var(--accent); }
+  .chip[aria-pressed="true"]{ background:#15161A; color:#FFFFFF; border-color:#15161A; }
+  html[data-theme="dark"] .chip{ color:#FFFFFF; border-color:var(--line-dark); }
+  html[data-theme="dark"] .chip[aria-pressed="true"]{ background:#FFFFFF; color:#000000; border-color:#FFFFFF; }
+  .tech-pill{ display:none; align-items:center; gap:8px; font-family:'IBM Plex Mono'; font-size:12.5px; padding:8px 8px 8px 14px; border-radius:999px; border:1px dashed var(--accent); }
+  .tech-pill.on{ display:inline-flex; }
+  .tech-pill button{ border:0; background:transparent; cursor:pointer; color:var(--ink); font-size:15px; line-height:1; padding:0 4px; }
+  .proj-count{ margin-left:auto; font-family:'IBM Plex Mono'; font-size:12.5px; color:var(--ink-soft); }
+
+  .proj-list{ margin-top:28px; display:flex; flex-direction:column; }
+  .proj{
+    position:relative; display:grid; grid-template-columns:70px 1fr auto; gap:28px; align-items:start;
+    padding:38px 18px; margin:0 -18px; border-top:1px solid var(--line); border-radius:12px;
+    transition:opacity .35s var(--ease), transform .35s var(--ease);
+  }
+  .proj::before{
+    content:""; position:absolute; inset:0; border-radius:12px; pointer-events:none; opacity:0;
+    background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(0,0,0,0.045), transparent 60%);
+    transition:opacity .3s var(--ease);
+  }
+  html[data-theme="dark"] .proj::before{ background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.06), transparent 60%); }
+  .proj:hover::before{ opacity:1; }
+  .proj.hide{ display:none; }
+  .proj.pop{ animation:pop .45s var(--ease); }
+  @keyframes pop{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+  .proj-list .proj:last-child{ border-bottom:1px solid var(--line); }
+  .proj-num{ font-family:'IBM Plex Mono'; font-size:13px; color:var(--ink-soft); padding-top:6px; }
+  .proj-body h3{ font-size:23px; margin-bottom:10px; }
+  .proj-body > p{ color:var(--ink-soft); max-width:640px; margin:0 0 16px; }
+  .proj-metric{ display:inline-flex; align-items:baseline; gap:6px; margin-bottom:16px; font-family:'Space Grotesk'; font-weight:600; font-size:26px; color:var(--accent-ink); }
+  .proj-metric span{ font-family:'Inter'; font-weight:500; font-size:13px; color:var(--ink-soft); }
+  .proj-metric .num{ font-family:'Space Grotesk'; font-weight:600; font-size:26px; color:var(--accent-ink); }
+  .proj-tags{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:14px; }
+  .proj-tags span{ font-family:'IBM Plex Mono'; font-size:11.5px; padding:4px 9px; border-radius:6px; border:1px solid var(--line); color:var(--ink-soft); }
+  .more{
+    display:inline-flex; align-items:center; gap:8px; border:0; background:transparent; padding:0; cursor:pointer;
+    font-family:'IBM Plex Mono'; font-size:12.5px; color:var(--ink); letter-spacing:.04em;
+  }
+  .more .plus{ display:inline-block; transition:transform .3s var(--ease); }
+  .more[aria-expanded="true"] .plus{ transform:rotate(45deg); }
+  .details{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .45s var(--ease); }
+  .details > div{ overflow:hidden; }
+  .details.open{ grid-template-rows:1fr; }
+  .details ul{ margin:16px 0 0; padding-left:18px; color:var(--ink-soft); max-width:640px; font-size:15.5px; }
+  .details li{ margin-bottom:6px; }
+  .proj-link{ white-space:nowrap; font-size:14px; text-decoration:none; padding-top:8px; display:inline-flex; align-items:center; gap:6px; color:var(--ink); border-bottom:1px solid var(--accent); }
+  .proj-link .arr{ display:inline-block; transition:transform .3s var(--ease); }
+  .proj-link:hover .arr{ transform:translateX(4px); }
+  .proj-internal{ white-space:nowrap; font-family:'IBM Plex Mono'; font-size:12px; color:var(--ink-soft); padding-top:9px; }
+  @media(max-width:700px){ .proj{ grid-template-columns:1fr; gap:12px; } .proj-link, .proj-internal{ padding-top:0; } }
+
+  /* mini demo do evento Java */
+  .flow{ margin:18px 0 4px; border:1px solid var(--line); border-radius:12px; padding:18px; max-width:640px; }
+  .flow-steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .flow-step{ border:1px solid var(--line); border-radius:9px; padding:12px; font-size:13px; line-height:1.35; color:var(--ink-soft); transition:border-color .3s var(--ease), background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease); }
+  .flow-step b{ display:block; font-family:'IBM Plex Mono'; font-size:11px; font-weight:500; margin-bottom:6px; color:var(--ink-soft); }
+  .flow-step.on{ border-color:var(--accent); color:var(--ink); transform:translateY(-2px); background:rgba(0,0,0,0.03); }
+  html[data-theme="dark"] .flow-step.on{ background:rgba(255,255,255,0.06); }
+  .flow-bar{ display:flex; align-items:center; gap:14px; margin-top:14px; }
+  .flow-log{ font-family:'IBM Plex Mono'; font-size:12px; color:var(--ink-soft); }
+  @media(max-width:640px){ .flow-steps{ grid-template-columns:1fr 1fr; } }
+
+  /* ---------- EXPERIÊNCIA ---------- */
+  .timeline{ margin-top:56px; position:relative; padding-left:34px; }
+  .timeline::before{ content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:var(--line-dark); }
+  .t-item{ position:relative; padding-bottom:46px; }
+  .t-item:last-child{ padding-bottom:0; }
+  .t-item::before{ content:""; position:absolute; left:-34px; top:5px; width:11px; height:11px; border-radius:50%; background:#FFFFFF; box-shadow:0 0 0 4px var(--bg-dark); }
+  .t-date{ font-family:'IBM Plex Mono'; font-size:12.5px; color:#FFFFFF; letter-spacing:0.06em; }
+  .t-item h3{ font-size:21px; margin:8px 0 6px; }
+  .t-item p{ color:var(--paper-soft); max-width:600px; margin:0; }
+  .band-dark .more{ color:#FFFFFF; margin-top:14px; }
+  .band-dark .details ul{ color:#EBEBEB; }
+
+  /* ---------- CONTATO ---------- */
+  .contato-inner{ text-align:center; max-width:640px; margin:0 auto; }
+  .contato-inner h2{ font-size:clamp(34px,5.4vw,58px); margin-top:20px; }
+  .contato-actions{ margin-top:40px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+  .toast{
+    position:fixed; left:50%; bottom:28px; transform:translate(-50%, 20px); opacity:0; pointer-events:none; z-index:60;
+    background:#15161A; color:#FFFFFF; font-family:'IBM Plex Mono'; font-size:13px; padding:12px 18px; border-radius:999px;
+    transition:opacity .3s var(--ease), transform .3s var(--ease);
+  }
+  html[data-theme="dark"] .toast{ background:#FFFFFF; color:#000000 !important; }
+  .toast.show{ opacity:1; transform:translate(-50%, 0); }
+
+  footer{ padding:34px 0; border-top:1px solid var(--line); }
+  html[data-theme="dark"] footer{ border-color:var(--line-dark); }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--ink-soft); }
+  @media(max-width:600px){ footer .wrap{ flex-direction:column; gap:10px; text-align:center; } }
+
+  ::selection{ background:var(--accent); color:#FFFFFF; }
+  html[data-theme="dark"] ::selection{ color:#000000; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+  }
 </style>
 </head>
 <body>
-<div class="reading-line" aria-hidden="true"></div>
-<header class="topbar">
-  <a class="brand" href="#inicio" aria-label="Do Ruído ao Movimento, início"><span class="brand-mark">JD↗</span> DO RUÍDO AO MOVIMENTO</a>
-  <button class="menu-toggle" aria-expanded="false" aria-label="Abrir navegação">MENU +</button>
-  <nav id="nav">
-    <a href="#origens">Origens</a><a href="#linha-do-tempo">Linha do tempo</a><a href="#duas-eras">Duas eras</a><a href="#sequenciador">Sequenciador</a><a href="#catalogo">Catálogo</a>
+
+<div class="current-rail"><div class="current-fill" id="currentFill"><div class="current-dot"></div></div></div>
+
+<header id="siteHeader">
+  <nav class="wrap">
+    <a href="#hero" class="brand">Kauan França</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>
+        </svg>
+      </button>
+    </div>
   </nav>
 </header>
-<main>
-<section class="hero" id="inicio">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow mono">Manchester · 1976—presente</div>
-      <h1>Do ruído <span>ao <em>movimento.</em></span></h1>
-      <p class="hero-copy">A história de duas bandas, uma cidade industrial e uma reinvenção que mudou a música popular. Do pulso sombrio de Joy Division à eletrônica expansiva do New Order — uma travessia feita de perda, risco e futuro.</p>
-      <div class="hero-meta mono"><span>01 / 02 bandas</span><span>Factory Records</span><span>Uma história sonora</span></div>
+
+<section class="hero" id="hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Portfólio — Dados & Engenharia</span>
+    <h1 class="reveal">Kauan Silva<br>França</h1>
+    <p class="role reveal">Desenvolvedor &amp; Analista de Dados</p>
+    <p class="rotator reveal" aria-live="polite">&gt; construo <span class="word" id="rotWord">integrações entre sistemas</span><span class="caret" aria-hidden="true"></span></p>
+    <p class="desc reveal">Estudante de Ciência e Tecnologia – Ciência de Dados na UFABC e estagiário de tecnologia na Neosolar. Transformo dados e processos manuais em automações, integrações e modelos que resolvem problemas reais — com Python, Java, SQL e IA aplicada.</p>
+    <div class="actions reveal">
+      <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+      <a href="#contato" class="btn btn-ghost">Falar comigo</a>
     </div>
-    <div class="hero-art" aria-label="Animação abstrata de sinal sonoro">
-      <div class="orbit"></div><div class="orbit two"></div><div class="orbit three"></div>
-      <canvas class="signal" id="heroWave"></canvas>
-      <div class="hero-stamp">NOISE<br>→ NEW<br>ORDER</div>
+
+    <div class="hero-stats reveal">
+      <div><strong data-count="9">0</strong><span>projetos e entregas</span></div>
+      <div><strong data-count="490" data-prefix="~">0</strong><span>falsos cancelamentos encontrados</span></div>
+      <div><strong data-count="99" data-suffix="%">0</strong><span>acurácia no modelo de crédito</span></div>
+      <div><strong data-count="2025" data-plain="1">0</strong><span>no ERP Sankhya desde</span></div>
+    </div>
+
+    <div class="hero-visual reveal" id="heroVisual">
+      <pre class="bonsai-art" id="bonsai">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠤⠤⣄⠀⢀⠔⠱⢦⡀⢠⡞⠤⠽⢦⠀⢀⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠒⣄⡈⣷⠞⠀⠀⠀⣹⠏⠀⠐⠈⣼⠗⢩⣤⣾⢹⡄⣠⣖⠇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⡯⠂⢙⢿⠀⠀⠀⡰⡍⠀⠀⠠⣡⡎⡌⣭⠃⡇⣷⠟⠁⣟⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢰⡩⠐⣤⡀⡾⣡⢃⢧⠀⡰⣴⡀⢀⣶⣹⠟⣶⢆⣴⣷⢠⣼⢿⡖⢱⠃⢠⠔⣟⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⠤⡤⣗⡃⣴⣯⣿⡕⣺⡞⣾⡧⠛⠫⣯⡿⠛⢙⢿⠿⣼⡿⠋⢹⡚⡠⢸⣄⠚⠴⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⡞⠄⠉⡣⣿⣾⢿⡂⠉⢷⢪⣰⠆⠀⠉⠑⡴⠉⠀⠀⢈⢣⡀⡾⣎⠀⢨⡏⠠⢁⠃⠀⣀⣠⢤⣦⡄⠤⠤⣤
+⡖⠖⠼⢦⣀⠀⠫⡱⢬⣻⣆⠙⢣⣊⣴⡈⢀⢸⠔⠠⠀⠀⠀⠘⣹⠏⠄⣤⣔⡷⣡⠞⣺⠽⢒⣪⣟⡟⠀⢀⣷⠋
+⠘⢅⡢⠈⢗⠀⠘⢻⣶⡨⡰⢦⣄⠠⠶⠈⠠⠘⠀⠀⠀⠀⢐⢺⠁⠀⠈⡆⡛⡵⠟⣊⠔⡪⢞⣥⡾⡀⣴⠟⠁⠀
+⠀⠀⠙⠷⣄⡓⢄⠘⣿⣿⣦⡠⢀⠑⢤⣰⠔⠊⠉⠑⠤⢀⢈⢇⠀⠀⠀⣨⠮⠒⣉⠔⠛⣢⣞⣡⠴⠊⠀⠀⠀⠀
+⠀⠀⠀⣀⣀⡙⠳⢿⣞⣿⣿⣿⣮⣵⣂⢗⠀⢄⠀⠀⠀⠀⠹⠀⢀⠄⠪⠐⡒⢈⣠⠴⠾⠚⠋⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠻⣿⣿⣿⣿⣿⡉⢍⠉⠉⢟⠫⢭⡿⡶⠄⢀⣀⠀⣠⠾⢒⠁⠵⣆⠷⢿⡟⡛⠛⠱⠲⠶⢠⣤⣄⣀⣀⠀⠀
+⠀⠀⠀⠀⠉⠛⠛⢛⣻⣾⣦⣦⣤⣁⣂⣑⣿⣿⣿⣿⣷⣾⣶⣿⣿⠟⠁⠀⠀⠀⠉⠒⠫⠄⡀⠀⠀⠉⣉⡿⠛⠀
+⠀⠀⢀⣠⡤⠶⣿⣿⣿⣿⣿⡿⣿⡿⠿⣟⣝⠾⠿⢿⣿⠿⢿⢻⣿⠳⣶⣤⣀⡀⠀⠀⠀⠀⠀⠙⠛⠥⡀⠀⠀⠀
+⠀⠸⠯⠄⣀⠀⠠⠤⠔⠒⠛⠉⠁⠀⠐⡟⠈⠁⠀⠀⠀⠀⠎⣺⠏⠀⠀⠉⠙⠛⠳⠶⠶⢄⣤⣠⡤⠞⠃⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣄⠀⠀⠀⢀⡠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠒⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+      </pre>
+      <span class="hint">mova o mouse ↔</span>
     </div>
   </div>
-  <div class="scroll-note mono">Role para escutar a história</div>
 </section>
-<section class="section" id="origens">
- <div class="wrap">
-  <div class="section-head reveal"><div class="kicker mono">Capítulo 01 / 04</div><div><h2>Antes do <span class="outline">silêncio.</span></h2><p class="intro">Quatro jovens de Salford e Manchester encontram uma linguagem própria no pós-punk: crua, urgente e inquieta. A história começa como Warsaw, atravessa uma mudança de nome e chega a uma voz que transformaria a banda para sempre.</p></div></div>
-  <div class="chapter-grid">
-   <article class="chapter reveal"><div class="year mono">1976 — A faísca</div><div><h3>O impacto dos Pistols</h3><p>Bernard Sumner e Peter Hook assistem ao show dos Sex Pistols no Lesser Free Trade Hall, em Manchester. A ideia de formar uma banda deixa de parecer distante.</p></div><div class="tag">Ponto de partida</div></article>
-   <article class="chapter reveal"><div class="year mono">1977 — Warsaw</div><div><h3>Encontrar o ruído</h3><p>Sumner, Hook e Terry Mason começam a ensaiar. O projeto adota o nome Warsaw, inspirado por “Warszawa”, de David Bowie; Stephen Morris assume a bateria pouco depois.</p></div><div class="tag">Punk / DIY</div></article>
-   <article class="chapter reveal"><div class="year mono">1978 — Uma voz</div><div><h3>Ian Curtis entra</h3><p>Ian Curtis responde ao anúncio da banda e passa a ser o vocalista e letrista. Sua presença transforma o peso instrumental em algo íntimo e inquietante.</p></div><div class="tag">Voz / palavra</div></article>
-   <article class="chapter reveal"><div class="year mono">1978 — A mudança</div><div><h3>Joy Division</h3><p>Para evitar confusão com outra banda chamada Warsaw Pakt, o grupo muda de nome. O som também amadurece: menos explosão punk, mais espaço, tensão e repetição.</p></div><div class="tag">Pós-punk</div></article>
-   <article class="chapter reveal"><div class="year mono">1979 — O primeiro disco</div><div><h3>Um lugar próprio</h3><p>Unknown Pleasures, produzido por Martin Hannett e lançado pela Factory Records, converte o ambiente industrial de Manchester em arquitetura sonora.</p></div><div class="tag">Factory / FAC 10</div></article>
-   <article class="chapter reveal"><div class="year mono">1980 — O último capítulo</div><div><h3>Uma despedida abrupta</h3><p>Closer aprofunda a atmosfera da banda. Ian Curtis morre em maio de 1980, pouco antes da primeira turnê norte-americana. O futuro do grupo fica em aberto.</p></div><div class="tag">Fim de uma era</div></article>
+
+<section id="sobre">
+  <div class="wrap">
+    <span class="eyebrow reveal">01 — Sobre mim</span>
+    <h2 class="reveal section-title">Tecnologia só importa quando resolve algo real.</h2>
+    <div class="sobre-grid">
+      <div class="reveal">
+        <p>Acredito que a tecnologia só atinge seu potencial máximo quando resolve problemas reais e facilita a vida das pessoas. Sou graduando do bacharelado em Ciência e Tecnologia – Ciência de Dados na UFABC (previsão 12/2028), onde desenvolvi um perfil analítico e voltado para a inovação.</p>
+        <p>Na Neosolar, aplico isso todo dia: crio eventos programáveis em Java no ERP Sankhya, investigo falhas de integração direto no banco Oracle, automatizo cadastros com n8n e mantenho painéis de monitoramento em tempo real.</p>
+      </div>
+      <div class="reveal">
+        <p>Minha jornada é guiada pelo desejo de construir infraestruturas mais inteligentes, transitando da engenharia de dados com Python e Java até o interesse crescente por segurança da informação, QA e troubleshooting automatizado com IA.</p>
+        <p>Além da tecnologia, também me dedico a projetos pessoais e criativos — do desenvolvimento front-end com Three.js à produção de conteúdo sobre cultura musical.</p>
+      </div>
+    </div>
   </div>
- </div>
 </section>
-<section class="section light" id="linha-do-tempo">
- <div class="wrap">
-  <div class="section-head reveal"><div class="kicker mono">Arquivo cronológico</div><div><h2>O tempo não <span class="outline">para.</span></h2><p class="intro">A transformação não apaga o que veio antes. Cada ano acrescenta uma camada — do ensaio em salas pequenas à pista de dança, do baixo melódico à caixa de ritmos.</p></div></div>
-  <div class="timeline">
-   <article class="event reveal"><div class="event-year">1976</div><div class="event-content"><span class="mono">Origem</span><h3>Uma cidade em combustão</h3><p>O punk inspira jovens músicos a criar sem pedir permissão. Em Manchester, Bernard Sumner e Peter Hook decidem formar uma banda após verem os Sex Pistols.</p></div></article>
-   <article class="event reveal"><div class="event-year">1977</div><div class="event-content"><span class="mono">Warsaw</span><h3>Aprender fazendo</h3><p>Os primeiros ensaios têm a urgência do punk. A formação se reorganiza até a chegada de Stephen Morris, que traz uma precisão rítmica decisiva.</p></div></article>
-   <article class="event reveal"><div class="event-year">1978</div><div class="event-content"><span class="mono">Joy Division</span><h3>O espaço vira instrumento</h3><p>Ian Curtis se junta ao grupo e a banda assume o nome Joy Division. Rob Gretton torna-se empresário e o selo Factory começa a dar forma à cena local.</p></div></article>
-   <article class="event reveal"><div class="event-year">1979</div><div class="event-content"><span class="mono">Unknown Pleasures</span><h3>Uma assinatura sonora</h3><p>O álbum de estreia combina baixo à frente, guitarras angulares, bateria seca e produção atmosférica de Martin Hannett. O design de Peter Saville cria uma identidade visual original e duradoura.</p></div></article>
-   <article class="event reveal"><div class="event-year">1980</div><div class="event-content"><span class="mono">Closer / transição</span><h3>O fim e a continuação</h3><p>Após a morte de Curtis, os integrantes decidem seguir juntos sem substituir sua voz. O último show de Joy Division acontece no High Hall, Universidade de Birmingham, em 2 de maio; a banda se apresenta pela última vez como Joy Division em 1980.</p></div></article>
-   <article class="event reveal"><div class="event-year">1981</div><div class="event-content"><span class="mono">New Order</span><h3>Recomeçar com outra linguagem</h3><p>“Ceremony”, canção escrita ainda na época de Joy Division, torna-se o primeiro single do New Order. Gillian Gilbert entra para tocar teclados e guitarra, consolidando a formação de quarteto.</p></div></article>
-   <article class="event reveal"><div class="event-year">1983</div><div class="event-content"><span class="mono">Blue Monday</span><h3>A pista como laboratório</h3><p>O single “Blue Monday” une sequenciadores, sintetizadores e uma batida mecânica com estrutura pop. Torna-se um marco da música eletrônica e da cultura de clubes.</p></div></article>
-   <article class="event reveal"><div class="event-year">1986</div><div class="event-content"><span class="mono">Brotherhood</span><h3>Guitarra e máquina</h3><p>O New Order passa a equilibrar de forma mais explícita a banda de rock e o projeto eletrônico. “Bizarre Love Triangle” amplia o alcance internacional do grupo.</p></div></article>
-   <article class="event reveal"><div class="event-year">1988–92</div><div class="event-content"><span class="mono">Club culture</span><h3>O som de uma cidade</h3><p>A Haçienda, clube ligado à Factory Records e ao New Order, torna-se um ponto central da cultura club britânica. O grupo atravessa mudanças de mercado e tensões internas, mantendo a experimentação.</p></div></article>
-   <article class="event reveal"><div class="event-year">1993+</div><div class="event-content"><span class="mono">Pausas e retornos</span><h3>Um legado em movimento</h3><p>Depois de pausas, projetos paralelos e mudanças de formação, o New Order continua a revisitar seu repertório. A história não é uma linha reta, mas uma série de recomeços.</p></div></article>
+
+<section id="stack" class="band-dark">
+  <div class="wrap">
+    <span class="eyebrow reveal">02 — Stack</span>
+    <h2 class="reveal section-title">Ferramentas que uso para construir.</h2>
+
+    <div class="stack-grid reveal" id="stackGrid">
+      <div class="stack-cell">
+        <h3>Dados &amp; IA</h3>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">scikit-learn</span>
+          <span class="tag">NetworkX</span><span class="tag">Matplotlib</span><span class="tag">Gephi</span><span class="tag">Gemini API</span>
+        </div>
+      </div>
+      <div class="stack-cell">
+        <h3>Backend &amp; ERP</h3>
+        <div class="tag-row">
+          <span class="tag">Java</span><span class="tag">Oracle PL/SQL</span><span class="tag">SQL avançado</span>
+          <span class="tag">Sankhya ERP</span><span class="tag">Eventos Programáveis</span><span class="tag">XML NF-e</span>
+        </div>
+      </div>
+      <div class="stack-cell">
+        <h3>Automação &amp; Integrações</h3>
+        <div class="tag-row">
+          <span class="tag">n8n</span><span class="tag">Google Apps Script</span><span class="tag">Celery</span>
+          <span class="tag">Zoho Deluge</span><span class="tag">Zoho Flow</span><span class="tag">Intelipost</span><span class="tag">PontoTel</span>
+        </div>
+      </div>
+      <div class="stack-cell">
+        <h3>Front-end &amp; Criativo</h3>
+        <div class="tag-row">
+          <span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Three.js</span><span class="tag">Design de Interface</span>
+        </div>
+      </div>
+      <div class="stack-cell">
+        <h3>Ferramentas</h3>
+        <div class="tag-row">
+          <span class="tag">Git / GitHub</span><span class="tag">Eclipse</span><span class="tag">Docker</span><span class="tag">WSL</span><span class="tag">iReport</span>
+        </div>
+      </div>
+      <div class="stack-cell">
+        <h3>Idiomas</h3>
+        <div class="tag-row">
+          <span class="tag">Português · nativo</span><span class="tag">Inglês · avançado</span>
+        </div>
+      </div>
+    </div>
+    <p class="stack-hint ink-soft reveal">● clique numa tecnologia marcada para ver os projetos em que ela foi usada</p>
   </div>
- </div>
 </section>
-<section class="section blue" id="duas-eras">
- <div class="wrap">
-  <div class="section-head reveal"><div class="kicker mono">Módulo comparativo</div><div><h2>Duas eras.<br><span class="outline">Um pulso.</span></h2><p class="intro" style="color:#d7defe">A reinvenção do grupo não foi uma ruptura total. O baixo hipnótico, a insistência rítmica e a vontade de experimentar continuaram — mas mudaram de função, de textura e de destino.</p></div></div>
-  <div class="compare">
-   <article class="compare-panel jd reveal"><div class="big-number">01</div><div class="mono" style="color:var(--acid)">1977—1980 / pós-punk</div><h3>Joy<br>Division</h3><p>Uma música de tensão e contenção. O espaço entre os sons pesa tanto quanto as notas; a voz transforma observação urbana em confissão.</p><div class="spec-list"><div class="spec"><b>Ritmo</b><span>Bateria orgânica, repetição hipnótica</span></div><div class="spec"><b>Centro</b><span>Baixo melódico, guitarra angular</span></div><div class="spec"><b>Atmosfera</b><span>Reverb, silêncio, tensão</span></div><div class="spec"><b>Imagem</b><span>Contraste, abstração, austeridade</span></div></div></article>
-   <article class="compare-panel no reveal"><div class="big-number">02</div><div class="mono">1981— / eletrônica + pop</div><h3>New<br>Order</h3><p>O mesmo impulso ganha velocidade e abre espaço à dança. Máquinas e instrumentos convivem sem eliminar a melancolia que já existia.</p><div class="spec-list"><div class="spec"><b>Ritmo</b><span>Drum machines, sequências, pista</span></div><div class="spec"><b>Centro</b><span>Sintetizadores, baixo e guitarra</span></div><div class="spec"><b>Atmosfera</b><span>Melancolia luminosa, movimento</span></div><div class="spec"><b>Imagem</b><span>Geometria, cor, design modernista</span></div></div></article>
+
+<section id="projetos">
+  <div class="wrap">
+    <span class="eyebrow reveal">03 — Projetos em destaque</span>
+    <h2 class="reveal section-title">Do modelo ao chão de produção.</h2>
+
+    <div class="filters reveal" role="toolbar" aria-label="Filtrar projetos">
+      <button class="chip" data-cat="all" aria-pressed="true">Todos</button>
+      <button class="chip" data-cat="dados" aria-pressed="false">Dados &amp; IA</button>
+      <button class="chip" data-cat="erp" aria-pressed="false">Backend &amp; ERP</button>
+      <button class="chip" data-cat="auto" aria-pressed="false">Automação</button>
+      <span class="tech-pill" id="techPill">tecnologia: <strong id="techName"></strong><button id="techClear" aria-label="Limpar filtro de tecnologia">×</button></span>
+      <span class="proj-count" id="projCount"></span>
+    </div>
+
+    <div class="proj-list" id="projList">
+
+      <div class="proj reveal" data-cat="erp auto" data-tech="Java|Sankhya ERP|Eventos Programáveis|XML NF-e|Oracle PL/SQL">
+        <span class="proj-num">01</span>
+        <div class="proj-body">
+          <h3>Evento Java no Portal de Importação de XML</h3>
+          <div class="proj-metric"><span class="num" data-count="6">0</span> <span>vínculos criados sozinhos · 3 notas validadas em homologação</span></div>
+          <p>Evento programável (JAPE) no ERP Sankhya que, assim que a NF-e do fornecedor chega, vincula cada item ao produto pelo código do fornecedor ou pelo EAN e corrige o NCM — sem ninguém digitar nada.</p>
+          <div class="proj-tags"><span>Java</span><span>JAPE</span><span>Oracle</span><span>XML NF-e</span></div>
+          <button class="more" aria-expanded="false"><span class="plus">+</span> como funciona</button>
+          <div class="details"><div>
+            <div class="flow" data-flow>
+              <div class="flow-steps">
+                <div class="flow-step"><b>01 · afterInsert</b>XML da NF-e entra na TGFIXN</div>
+                <div class="flow-step"><b>02 · parse</b>lê cada item (cProd, EAN, NCM)</div>
+                <div class="flow-step"><b>03 · busca</b>vínculo TGFPAP → EAN na TGFPRO/TGFBAR</div>
+                <div class="flow-step"><b>04 · grava</b>NCM atualizado + vínculo criado</div>
+              </div>
+              <div class="flow-bar"><button class="btn btn-ghost" style="padding:9px 18px; font-size:13px;" data-run>▶ simular</button><span class="flow-log" data-log>pronto para rodar</span></div>
+            </div>
+            <ul>
+              <li>Roda na mesma transação do portal: sem conexão paralela, sem lock.</li>
+              <li>Ignora "SEM GTIN" e EANs ligados a mais de um produto para não criar vínculo errado.</li>
+              <li>Não sobrescreve a descrição padronizada do produto; erros vão só para o log.</li>
+            </ul>
+          </div></div>
+        </div>
+        <span class="proj-internal">projeto interno</span>
+      </div>
+
+      <div class="proj reveal" data-cat="erp auto" data-tech="Oracle PL/SQL|SQL avançado|Intelipost|Sankhya ERP">
+        <span class="proj-num">02</span>
+        <div class="proj-body">
+          <h3>Investigação de Cancelamentos Indevidos — Intelipost</h3>
+          <div class="proj-metric">~<span class="num" data-count="490">0</span> <span>falsos cancelamentos encontrados em 13 meses</span></div>
+          <p>Análise de causa raiz na integração Sankhya–Intelipost (via TemAPI): pedidos eram cancelados por engano porque uma view de status cruzava o número da NF com notas antigas já canceladas.</p>
+          <div class="proj-tags"><span>Oracle SQL</span><span>Views</span><span>Integração</span></div>
+          <button class="more" aria-expanded="false"><span class="plus">+</span> detalhes</button>
+          <div class="details"><div><ul>
+            <li>Investigação só com consultas de leitura em produção — nada alterado sem validação.</li>
+            <li>Correção simulada na base de teste: elimina os falsos positivos e mantém todos os 40 cancelamentos reais dos últimos 180 dias.</li>
+            <li>View corrigida mantém o mesmo nome e colunas, sem mudança para o fornecedor.</li>
+          </ul></div></div>
+        </div>
+        <span class="proj-internal">projeto interno</span>
+      </div>
+
+      <div class="proj reveal" data-cat="dados" data-tech="Python|Pandas|scikit-learn|Matplotlib">
+        <span class="proj-num">03</span>
+        <div class="proj-body">
+          <h3>Classificação de Risco de Crédito</h3>
+          <div class="proj-metric"><span class="num" data-count="99" data-suffix="%">0</span> <span>acurácia · precisão e recall 99% · AUC-ROC 0,997</span></div>
+          <p>Modelo de inadimplência com Random Forest (100 árvores, classes balanceadas) treinado em dataset sintético de 1.000 registros, com divisão treino/teste estratificada 80/20.</p>
+          <div class="proj-tags"><span>Python</span><span>Pandas</span><span>scikit-learn</span><span>Seaborn</span></div>
+          <button class="more" aria-expanded="false"><span class="plus">+</span> metodologia</button>
+          <div class="details"><div><ul>
+            <li>EDA, encoding de variáveis categóricas e avaliação com classification report e matriz de confusão.</li>
+            <li>Matriz de confusão e gráfico de importância das features com Matplotlib/Seaborn.</li>
+            <li>Predição em tempo real para novos clientes.</li>
+          </ul></div></div>
+        </div>
+        <a class="proj-link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub <span class="arr">→</span></a>
+      </div>
+
+      <div class="proj reveal" data-cat="dados auto" data-tech="Python|Gemini API|Oracle PL/SQL">
+        <span class="proj-num">04</span>
+        <div class="proj-body">
+          <h3>Analisador de Logs com IA</h3>
+          <div class="proj-metric">SRE <span>automatizado</span></div>
+          <p>Ferramenta em Python que varre logs de servidor, rankeia exceções (incluindo falhas Oracle) e usa a API do Gemini como assistente de troubleshooting, gerando diagnóstico de causa raiz e plano de mitigação.</p>
+          <div class="proj-tags"><span>Python</span><span>Gemini API</span><span>Logs</span></div>
+        </div>
+        <a class="proj-link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub <span class="arr">→</span></a>
+      </div>
+
+      <div class="proj reveal" data-cat="dados" data-tech="Python|NetworkX|Matplotlib|Gephi">
+        <span class="proj-num">05</span>
+        <div class="proj-body">
+          <h3>Rede Curricular de Matemática — Pesquisa UFABC</h3>
+          <div class="proj-metric"><span class="num" data-count="256">0</span> <span>arestas mapeadas</span></div>
+          <p>Conteúdos do 6º ao 9º ano (BNCC) modelados como grafo direcionado de pré-requisitos para revelar os tópicos-base e os gargalos pedagógicos do currículo. Resultou em artigo no formato IEEE.</p>
+          <div class="proj-tags"><span>Python</span><span>NetworkX</span><span>Gephi</span></div>
+          <button class="more" aria-expanded="false"><span class="plus">+</span> métricas usadas</button>
+          <div class="details"><div><ul>
+            <li>Grau de saída: tópicos "hub" que abrem caminho para muitos outros.</li>
+            <li>Betweenness: gargalos que funcionam como ponte obrigatória entre trilhas.</li>
+            <li>PageRank: importância global de cada tópico; grafo exportado em GraphML para o Gephi.</li>
+          </ul></div></div>
+        </div>
+        <a class="proj-link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub <span class="arr">→</span></a>
+      </div>
+
+      <div class="proj reveal" data-cat="dados" data-tech="JavaScript|Python">
+        <span class="proj-num">06</span>
+        <div class="proj-body">
+          <h3>Painel “Ressaca Eleitoral”</h3>
+          <div class="proj-metric">1988–2026 <span>Ibovespa · dólar · S&amp;P 500</span></div>
+          <p>Painel que compara a variação do Ibovespa e do dólar com a do S&amp;P 500 no dia seguinte a cada eleição, para ver como o mercado reage ao resultado das urnas.</p>
+          <div class="proj-tags"><span>HTML</span><span>JavaScript</span><span>Análise de dados</span></div>
+        </div>
+        <span class="proj-internal">projeto pessoal</span>
+      </div>
+
+      <div class="proj reveal" data-cat="auto erp" data-tech="n8n|Google Apps Script|Sankhya ERP|XML NF-e">
+        <span class="proj-num">07</span>
+        <div class="proj-body">
+          <h3>Cadastro Automático de Parceiros</h3>
+          <div class="proj-metric">XML → ERP <span>sem digitação</span></div>
+          <p>Add-on em Google Apps Script lê o XML da NF-e recebido no Gmail e envia ao n8n (self-hosted, protegido por Cloudflare Access), que consulta o parceiro por CNPJ e cadastra, atualiza ou reativa no Sankhya via API.</p>
+          <div class="proj-tags"><span>n8n</span><span>Apps Script</span><span>Webhooks</span><span>API Sankhya</span></div>
+        </div>
+        <span class="proj-internal">projeto interno</span>
+      </div>
+
+      <div class="proj reveal" data-cat="erp" data-tech="Java|Sankhya ERP|Eventos Programáveis">
+        <span class="proj-num">08</span>
+        <div class="proj-body">
+          <h3>Automação da Central de Compras via Eventos Programáveis</h3>
+          <div class="proj-metric"><span class="num" data-count="0">0</span> <span>preenchimentos manuais incorretos</span></div>
+          <p>Eventos Programáveis em Java integrados nativamente ao ERP Sankhya, interceptando ações de persistência para preencher dinamicamente os campos de Finalidade e Natureza da Operação, consolidando regras de negócio na camada da entidade.</p>
+          <div class="proj-tags"><span>Java</span><span>Sankhya</span></div>
+        </div>
+        <a class="proj-link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub <span class="arr">→</span></a>
+      </div>
+
+      <div class="proj reveal" data-cat="erp" data-tech="Oracle PL/SQL|Sankhya ERP|SQL avançado">
+        <span class="proj-num">09</span>
+        <div class="proj-body">
+          <h3>Monitoramento em Tempo Real — ERP Sankhya</h3>
+          <div class="proj-metric">24/7 <span>observabilidade</span></div>
+          <p>Painéis de monitoramento em tempo real sobre banco Oracle, com dashboards de rastreamento de atrasos em rotinas automatizadas e identificação imediata de travamentos, permitindo ações proativas antes que gargalos afetassem o negócio.</p>
+          <div class="proj-tags"><span>Oracle</span><span>Dashboards</span></div>
+        </div>
+        <a class="proj-link" href="https://github.com/kauan-franca1" target="_blank" rel="noopener">Ver perfil <span class="arr">→</span></a>
+      </div>
+
+    </div>
   </div>
- </div>
 </section>
-<section class="section" id="sequenciador">
- <div class="wrap">
-  <div class="section-head reveal"><div class="kicker mono">Laboratório interativo</div><div><h2>Construa o <span class="outline">pulso.</span></h2><p class="intro">Experimente um padrão original inspirado na interseção entre pós-punk e eletrônica. Ative os passos, mude as camadas e escute a repetição ganhar forma. Nenhum áudio original da banda é utilizado.</p></div></div>
-  <div class="sequencer-layout">
-   <div class="sequencer-copy reveal"><h3>Máquina de<br>ritmo / 01</h3><p>Um sequenciador de 16 passos, com sons sintetizados no navegador. Os quadrados acesos disparam notas; cada linha é uma camada diferente. Use fones e experimente desligar tudo menos o baixo.</p><p class="mono muted">Web Audio · Síntese em tempo real</p><div class="controls"><button class="btn primary" id="playBtn">▶ Reproduzir</button><button class="btn" id="stopBtn">■ Parar</button><button class="btn" id="clearBtn">Limpar padrão</button><button class="btn" id="presetBtn">Padrão inicial</button></div><p class="mono muted" id="audioStatus" aria-live="polite">Pronto para iniciar · áudio ativado pelo usuário</p></div>
-   <div class="seq-machine reveal">
-    <div class="seq-top"><span class="mono"><i class="led"></i>STEP / SEQUENCER</span><span class="mono muted">120 BPM · 4/4</span></div>
-    <div class="wave-wrap"><canvas id="scope"></canvas></div>
-    <div class="track-row"><div class="track-label">Kick</div><div class="steps" data-track="kick"></div></div>
-    <div class="track-row"><div class="track-label">Snare</div><div class="steps" data-track="snare"></div></div>
-    <div class="track-row"><div class="track-label">Hat</div><div class="steps" data-track="hat"></div></div>
-    <div class="track-row"><div class="track-label">Bass</div><div class="steps" data-track="bass"></div></div>
-    <div class="seq-foot"><span id="stepReadout">PASSO 01 / 16</span><label>Tempo <input id="tempo" type="range" min="70" max="150" value="120"> <span id="tempoVal">120</span></label><span>PADRÃO ORIGINAL</span></div>
-   </div>
+
+<section id="experiencia" class="band-dark">
+  <div class="wrap">
+    <span class="eyebrow reveal">04 — Experiência</span>
+    <h2 class="reveal section-title">Onde venho aplicando isso.</h2>
+
+    <div class="timeline reveal">
+      <div class="t-item">
+        <span class="t-date">06/2025 — Atual</span>
+        <h3>Estagiário de Tecnologia (ERP &amp; Integrações) — Neosolar</h3>
+        <p>Desenvolvimento no ERP Sankhya (Java, PL/SQL Oracle), integrações de sistemas (Intelipost, PontoTel, Zoho Flow, n8n) e automação de processos internos.</p>
+        <button class="more" aria-expanded="false"><span class="plus">+</span> principais entregas</button>
+        <div class="details"><div><ul>
+          <li>Evento Java no Portal de Importação de XML que vincula produtos e corrige NCM automaticamente.</li>
+          <li>Causa raiz de cancelamentos indevidos na integração com a Intelipost (~490 casos em 13 meses).</li>
+          <li>Cadastro automático de parceiros com n8n + Google Apps Script.</li>
+          <li>Monitoramento de ponto em Python/Celery com relatórios por e-mail (API PontoTel).</li>
+          <li>Funções PL/SQL para relatórios de expedição no iReport/JasperReports.</li>
+        </ul></div></div>
+      </div>
+      <div class="t-item">
+        <span class="t-date">06/2024 — previsão 12/2028</span>
+        <h3>Ciência e Tecnologia – Ciência de Dados — UFABC</h3>
+        <p>Formação interdisciplinar com foco em Ciência de Dados, incluindo pesquisa aplicada em análise de redes complexas e machine learning.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-date">09/2023 — 06/2024</span>
+        <h3>Recepcionista / Administrativo — Dasa</h3>
+        <p>Atendimento a pacientes, cobrança de exames, fechamento de caixa e planilhas de controle.</p>
+      </div>
+    </div>
   </div>
- </div>
 </section>
-<section class="section light" id="catalogo">
- <div class="wrap">
-  <div class="section-head reveal"><div class="kicker mono">Arquivo de escuta</div><div><h2>Objetos de <span class="outline">som.</span></h2><p class="intro">Um catálogo editorial de álbuns, singles e marcos da Factory Records. As imagens são composições geométricas originais — não reproduções de capas. Filtre por banda e percorra os pontos de virada.</p></div></div>
-  <div class="catalog-top"><span class="mono muted" id="recordCount">12 itens / seleção histórica</span><div class="filters" role="group" aria-label="Filtrar catálogo"><button class="filter active" data-filter="todos">Todos</button><button class="filter" data-filter="jd">Joy Division</button><button class="filter" data-filter="no">New Order</button><button class="filter" data-filter="factory">Factory / cena</button></div></div>
-  <div class="records" id="records">
-   <article class="record" data-band="jd"><div><div class="record-art"></div><div class="meta">1979 · Álbum · Factory FAC 10</div></div><div><h3>Unknown Pleasures</h3><p>A estreia que transformou a tensão industrial em paisagem sonora.</p></div></article>
-   <article class="record" data-band="jd"><div><div class="record-art"></div><div class="meta">1980 · Álbum · Factory FAC 25</div></div><div><h3>Closer</h3><p>Uma obra de intensidade emocional e produção austera.</p></div></article>
-   <article class="record" data-band="jd"><div><div class="record-art"></div><div class="meta">1979 · Single · Factory FAC 13</div></div><div><h3>Transmission</h3><p>Repetição, urgência e um refrão feito para corpos em movimento.</p></div></article>
-   <article class="record" data-band="jd"><div><div class="record-art"></div><div class="meta">1980 · Single · Factory FAC 23</div></div><div><h3>Love Will Tear Us Apart</h3><p>Uma canção de contraste entre melodia pop e fratura íntima.</p></div></article>
-   <article class="record" data-band="no"><div><div class="record-art"></div><div class="meta">1981 · Single · Factory FAC 33</div></div><div><h3>Ceremony</h3><p>Uma ponte entre a escrita de Curtis e o novo começo da banda.</p></div></article>
-   <article class="record" data-band="no"><div><div class="record-art"></div><div class="meta">1981 · Álbum · Factory FACT 50</div></div><div><h3>Movement</h3><p>Um recomeço cauteloso, ainda marcado pelo luto e pela busca de voz.</p></div></article>
-   <article class="record" data-band="no"><div><div class="record-art"></div><div class="meta">1983 · Single · Factory FAC 73</div></div><div><h3>Blue Monday</h3><p>Uma arquitetura eletrônica que se tornou hino de pista.</p></div></article>
-   <article class="record" data-band="no"><div><div class="record-art"></div><div class="meta">1983 · Álbum · Factory FACT 75</div></div><div><h3>Power, Corruption & Lies</h3><p>Máquinas, guitarras e uma nova paleta visual em equilíbrio.</p></div></article>
-   <article class="record" data-band="no"><div><div class="record-art"></div><div class="meta">1985 · Álbum · Factory FACT 100</div></div><div><h3>Low-Life</h3><p>Uma síntese entre composição pop, texturas digitais e sombra.</p></div></article>
-   <article class="record" data-band="no"><div><div class="record-art"></div><div class="meta">1986 · Álbum · Factory FACT 150</div></div><div><h3>Brotherhood</h3><p>Dois mundos sonoros convivem numa mesma identidade.</p></div></article>
-   <article class="record" data-band="factory"><div><div class="record-art"></div><div class="meta">1982 · Clube · Manchester</div></div><div><h3>The Haçienda</h3><p>Espaço cultural que ajudou a redefinir a noite e a música britânicas.</p></div></article>
-   <article class="record" data-band="factory"><div><div class="record-art"></div><div class="meta">1978+ · Selo independente</div></div><div><h3>Factory Records</h3><p>Um ecossistema criativo que uniu música, arte, arquitetura e atitude.</p></div></article>
+
+<section id="contato">
+  <div class="wrap contato-inner">
+    <span class="eyebrow reveal">05 — Contato</span>
+    <h2 class="reveal">Vamos conversar.</h2>
+    <p class="reveal ink-soft" style="margin-top:16px;">Aberto a oportunidades em desenvolvimento backend, integrações, automação e dados. Responder rápido é meu padrão.</p>
+    <div class="contato-actions reveal">
+      <a href="mailto:kauanf380@gmail.com" class="btn btn-accent">Enviar e-mail</a>
+      <button class="btn btn-ghost" id="copyEmail" data-email="kauanf380@gmail.com">Copiar e-mail</button>
+      <a href="Kauan_Franca_Curriculo.pdf" class="btn btn-ghost" download>Baixar currículo</a>
+      <a href="https://www.linkedin.com/in/kauan-fran%C3%A7a-294b34359/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      <a href="https://github.com/kauan-franca1" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+    </div>
   </div>
-  <div class="factory-note reveal"><h3>Factory não era<br>apenas um selo.</h3><p>Com Tony Wilson, Alan Erasmus, o produtor Martin Hannett e o designer Peter Saville entre seus nomes centrais, a Factory construiu uma identidade em que a embalagem, o espaço e o som faziam parte da mesma ideia. Sua cultura experimental também ajudou a formar a paisagem criativa de Manchester — embora nem todos os projetos associados ao selo tenham sido financeiramente sustentáveis.</p></div>
- </div>
 </section>
-<section class="section closing" id="encerramento">
- <div class="wrap reveal"><div class="kicker mono">Fim da faixa · começo de outra</div><h2>O som<br>continua<span>.</span></h2><p>Joy Division e New Order não são histórias isoladas, nem uma simples troca de nome. São duas respostas diferentes à mesma pergunta: o que uma banda pode se tornar quando decide seguir adiante?</p><a class="btn" href="#inicio" style="display:inline-block;margin-top:20px">↑ Voltar ao início</a></div>
-</section>
-</main>
-<footer class="wrap footer"><span>Do Ruído ao Movimento · ensaio visual e sonoro</span><span>Conteúdo editorial independente · sem capas reproduzidas</span><span>Manchester / 1976—∞</span></footer>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Kauan Silva França</span>
+    <span>Feito com Python, café e um pouco de Three.js</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
 <script>
-const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const nav = document.querySelector('#nav'), menu = document.querySelector('.menu-toggle');
-menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.textContent=open?'MENU −':'MENU +'});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='MENU +'}));
-const revealObserver = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
-function scrollUpdate(){const max=document.documentElement.scrollHeight-innerHeight;document.documentElement.style.setProperty('--progress',max>0?scrollY/max*100:0);document.querySelectorAll('.section').forEach(s=>{const r=s.getBoundingClientRect();if(r.top<innerHeight*.75&&r.bottom>innerHeight*.2){const light=s.classList.contains('light');document.documentElement.style.setProperty('--scroll-scale',Math.min(1.06,1+Math.max(0,(innerHeight*.75-r.top)/innerHeight)*.04));}})}
-addEventListener('scroll',scrollUpdate,{passive:true});scrollUpdate();
-// Original signal animation
-function setupCanvas(canvas){const dpr=Math.min(devicePixelRatio||1,2),r=canvas.getBoundingClientRect();canvas.width=Math.max(1,r.width*dpr);canvas.height=Math.max(1,r.height*dpr);const c=canvas.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);return {c,w:r.width,h:r.height}}
-let heroCanvas=document.querySelector('#heroWave'), heroCtx;
-function drawHero(t=0){const o=setupCanvas(heroCanvas),{c,w,h}=o;c.clearRect(0,0,w,h);c.strokeStyle='#d7ff3f';c.lineWidth=1.3;c.beginPath();for(let x=0;x<w;x+=2){const nx=x/w;let y=h/2+Math.sin(nx*24+t*.0015)*Math.sin(nx*3.14)*h*.25+Math.sin(nx*70-t*.002)*Math.sin(nx*3.14)*h*.06;if(x===0)c.moveTo(x,y);else c.lineTo(x,y)}c.stroke();c.globalAlpha=.25;c.strokeStyle='#eeeae2';c.beginPath();for(let x=0;x<w;x+=3){let y=h/2+Math.sin(x*.04-t*.001)*Math.sin(x*.013)*h*.15;c.lineTo(x,y)}c.stroke();if(!reduced)requestAnimationFrame(drawHero)}
-requestAnimationFrame(drawHero);addEventListener('resize',()=>{});
-// Catalogue filter
-const filters=[...document.querySelectorAll('.filter')],records=[...document.querySelectorAll('.record')];
-filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(b=>b.classList.toggle('active',b===btn));let count=0;records.forEach(card=>{const show=btn.dataset.filter==='todos'||card.dataset.band===btn.dataset.filter;card.hidden=!show;if(show)count++});document.querySelector('#recordCount').textContent=`${count} itens / seleção histórica`}));
-// Sequencer: audio generated locally with Web Audio
-const trackNames=['kick','snare','hat','bass'], pattern={kick:[0,4,8,12],snare:[4,12],hat:[2,6,10,14],bass:[0,3,7,8,11,15]};
-const grids={};let currentStep=-1,playing=false,timer=null,audio=null,master=null,analyser=null,scopeCtx=null;
-function buildGrid(){document.querySelectorAll('.steps').forEach(row=>{const track=row.dataset.track;grids[track]=[];for(let i=0;i<16;i++){const b=document.createElement('button');b.className='step';b.type='button';b.setAttribute('aria-label',`${track}, passo ${i+1}`);b.setAttribute('aria-pressed',pattern[track].includes(i));if(pattern[track].includes(i))b.classList.add('on');b.addEventListener('click',()=>{b.classList.toggle('on');b.setAttribute('aria-pressed',b.classList.contains('on'));if(b.classList.contains('on'))pattern[track].includes(i)||pattern[track].push(i);else pattern[track]=pattern[track].filter(n=>n!==i)});row.appendChild(b);grids[track].push(b)}})}
-buildGrid();
-function initAudio(){if(!audio){audio=new (window.AudioContext||window.webkitAudioContext)();master=audio.createGain();master.gain.value=.55;analyser=audio.createAnalyser();analyser.fftSize=1024;master.connect(analyser);analyser.connect(audio.destination)}if(audio.state==='suspended')audio.resume()}
-function tone(freq,dur,type='sine',gain=.2,slide=0){if(!audio)return;const osc=audio.createOscillator(),g=audio.createGain(),now=audio.currentTime;osc.type=type;osc.frequency.setValueAtTime(freq,now);if(slide)osc.frequency.exponentialRampToValueAtTime(Math.max(20,freq*slide),now+dur);g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(gain,now+.008);g.gain.exponentialRampToValueAtTime(.0001,now+dur);osc.connect(g);g.connect(master);osc.start(now);osc.stop(now+dur+.02)}
-function noise(dur,gain,filterFreq){const n=Math.floor(audio.sampleRate*dur),buf=audio.createBuffer(1,n,audio.sampleRate),data=buf.getChannelData(0);for(let i=0;i<n;i++)data[i]=Math.random()*2-1;const src=audio.createBufferSource(),f=audio.createBiquadFilter(),g=audio.createGain(),now=audio.currentTime;src.buffer=buf;f.type='highpass';f.frequency.value=filterFreq;g.gain.setValueAtTime(gain,now);g.gain.exponentialRampToValueAtTime(.001,now+dur);src.connect(f);f.connect(g);g.connect(master);src.start();src.stop(now+dur)}
-function hit(track){if(!audio)return;if(track==='kick'){tone(120,.16,'sine',.8,.22)}if(track==='snare'){noise(.12,.25,900);tone(180,.08,'triangle',.16,.5)}if(track==='hat'){noise(.045,.12,6500)}if(track==='bass'){const notes=[55,55,65.4,73.4,55,82.4,73.4,65.4];tone(notes[(currentStep+8)%notes.length],.22,'sawtooth',.12,.96)}}
-function paintStep(){trackNames.forEach(t=>grids[t].forEach((b,i)=>b.classList.toggle('playing',playing&&i===currentStep)));document.querySelector('#stepReadout').textContent=`PASSO ${String(currentStep+1).padStart(2,'0')} / 16`}
-function tick(){if(!playing)return;currentStep=(currentStep+1)%16;trackNames.forEach(t=>{if(pattern[t].includes(currentStep))hit(t)});paintStep();const bpm=+document.querySelector('#tempo').value;timer=setTimeout(tick,60000/bpm/4)}
-function start(){initAudio();if(playing)return;playing=true;document.querySelector('#playBtn').textContent='Ⅱ Pausar';document.querySelector('#audioStatus').textContent='Em reprodução · síntese local';tick();drawScope()}
-function stop(){playing=false;clearTimeout(timer);document.querySelector('#playBtn').textContent='▶ Reproduzir';document.querySelector('#audioStatus').textContent='Pausado · ajuste o padrão e reproduza';trackNames.forEach(t=>grids[t].forEach(b=>b.classList.remove('playing')))}
-document.querySelector('#playBtn').addEventListener('click',()=>playing?stop():start());document.querySelector('#stopBtn').addEventListener('click',stop);
-document.querySelector('#clearBtn').addEventListener('click',()=>{stop();trackNames.forEach(t=>{pattern[t]=[];grids[t].forEach(b=>{b.classList.remove('on');b.setAttribute('aria-pressed','false')})})});
-document.querySelector('#presetBtn').addEventListener('click',()=>{stop();const presets={kick:[0,4,8,12],snare:[4,12],hat:[2,6,10,14],bass:[0,3,7,8,11,15]};trackNames.forEach(t=>{pattern[t]=[...presets[t]];grids[t].forEach((b,i)=>{b.classList.toggle('on',pattern[t].includes(i));b.setAttribute('aria-pressed',b.classList.contains('on'))})})});
-document.querySelector('#tempo').addEventListener('input',e=>{document.querySelector('#tempoVal').textContent=e.target.value;if(playing){clearTimeout(timer);tick()}});
-function drawScope(){const canvas=document.querySelector('#scope'),r=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);if(canvas.width!==Math.floor(r.width*dpr)||canvas.height!==Math.floor(r.height*dpr)){canvas.width=Math.max(1,Math.floor(r.width*dpr));canvas.height=Math.max(1,Math.floor(r.height*dpr))}const c=canvas.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);const w=r.width,h=r.height;c.clearRect(0,0,w,h);c.strokeStyle='#282a21';c.lineWidth=1;for(let x=0;x<w;x+=24){c.beginPath();c.moveTo(x,0);c.lineTo(x,h);c.stroke()}for(let y=0;y<h;y+=22){c.beginPath();c.moveTo(0,y);c.lineTo(w,y);c.stroke()}c.strokeStyle='#d7ff3f';c.lineWidth=1.5;c.beginPath();let data;if(analyser&&playing){data=new Uint8Array(analyser.fftSize);analyser.getByteTimeDomainData(data)}for(let x=0;x<w;x++){let y;if(data){const idx=Math.floor(x/w*data.length);y=(data[idx]/255)*h}else{y=h/2+Math.sin(x*.05+performance.now()*.002)*Math.sin(x*.013)*h*.18}if(x===0)c.moveTo(x,y);else c.lineTo(x,y)}c.stroke();if(playing&&!reduced)requestAnimationFrame(drawScope)}
-drawScope();addEventListener('resize',()=>{drawScope();});
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- Tema (segue o sistema; alterna em memória) ----------
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const icon = document.getElementById('themeIcon');
+  function setIcon(theme){
+    icon.innerHTML = theme === 'dark'
+      ? '<path d="M21 12.6A9 9 0 1 1 11.4 3 7.2 7.2 0 0 0 21 12.6Z"/>'
+      : '<circle cx="12" cy="12" r="4.2"></circle><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>';
+  }
+  function setTheme(t){ root.setAttribute('data-theme', t); setIcon(t); }
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+  toggle.addEventListener('click', () => setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+
+  // ---------- Header + linha de progresso + link ativo ----------
+  const header = document.getElementById('siteHeader');
+  const fill = document.getElementById('currentFill');
+  const navLinks = [...document.querySelectorAll('#navLinks a')];
+  const sections = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll(){
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    const h = document.documentElement;
+    const height = h.scrollHeight - h.clientHeight;
+    fill.style.height = (height > 0 ? (h.scrollTop / height) * 100 : 0) + '%';
+    let current = -1;
+    sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < window.innerHeight * 0.4) current = i; });
+    navLinks.forEach((a, i) => a.classList.toggle('active', i === current));
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ---------- Contadores ----------
+  function countUp(el){
+    const target = parseFloat(el.dataset.count);
+    const prefix = el.dataset.prefix || '', suffix = el.dataset.suffix || '';
+    const plain = el.dataset.plain === '1';
+    const fmt = v => plain ? String(Math.round(v)) : Math.round(v).toLocaleString('pt-BR');
+    if (reduceMotion || target === 0){ el.textContent = prefix + fmt(target) + suffix; return; }
+    const start = plain ? target - 25 : 0, dur = 1200, t0 = performance.now();
+    (function step(now){
+      const p = Math.min((now - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + fmt(start + (target - start) * e) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+
+  // ---------- Reveal on scroll ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (!entry.isIntersecting) return;
+      setTimeout(() => entry.target.classList.add('in'), i * 40);
+      entry.target.querySelectorAll('[data-count]').forEach(countUp);
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+  if (reduceMotion) revealEls.forEach(el => { el.classList.add('in'); el.querySelectorAll('[data-count]').forEach(countUp); });
+
+  // ---------- Texto rotativo do hero ----------
+  const words = ['integrações entre sistemas', 'automações no ERP Sankhya', 'modelos de machine learning', 'consultas SQL que acham a causa raiz', 'painéis de dados'];
+  const rot = document.getElementById('rotWord');
+  if (!reduceMotion){
+    let wi = 0, ci = words[0].length, deleting = true;
+    setTimeout(function tick(){
+      const w = words[wi];
+      if (deleting){ ci--; if (ci <= 0){ deleting = false; wi = (wi + 1) % words.length; } }
+      else { ci++; if (ci >= words[wi].length){ deleting = true; rot.textContent = words[wi]; return setTimeout(tick, 1800); } }
+      rot.textContent = (deleting ? w : words[wi]).slice(0, Math.max(ci, 0));
+      setTimeout(tick, deleting ? 28 : 55);
+    }, 1800);
+  }
+
+  // ---------- Bonsai segue o mouse ----------
+  const hv = document.getElementById('heroVisual'), bonsai = document.getElementById('bonsai');
+  if (!reduceMotion && window.matchMedia('(hover: hover)').matches){
+    hv.addEventListener('mousemove', e => {
+      const r = hv.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      bonsai.style.transform = `perspective(700px) rotateY(${x * 10}deg) rotateX(${-y * 8}deg) translateX(${x * 12}px)`;
+    });
+    hv.addEventListener('mouseleave', () => { bonsai.style.transform = ''; });
+  } else { hv.querySelector('.hint').style.display = 'none'; }
+
+  // ---------- Filtros de projetos ----------
+  const projects = [...document.querySelectorAll('#projList .proj')];
+  const chips = [...document.querySelectorAll('.chip')];
+  const techPill = document.getElementById('techPill'), techName = document.getElementById('techName');
+  const projCount = document.getElementById('projCount');
+  const state = { cat: 'all', tech: null };
+  function applyFilter(){
+    let shown = 0;
+    projects.forEach(p => {
+      const okCat = state.cat === 'all' || p.dataset.cat.split(' ').includes(state.cat);
+      const okTech = !state.tech || p.dataset.tech.split('|').includes(state.tech);
+      const show = okCat && okTech;
+      const wasHidden = p.classList.contains('hide');
+      p.classList.toggle('hide', !show);
+      if (show){
+        shown++;
+        p.querySelector('.proj-num').textContent = String(shown).padStart(2, '0');
+        if (wasHidden){ p.classList.add('in'); p.classList.remove('pop'); void p.offsetWidth; p.classList.add('pop'); }
+      }
+    });
+    projCount.textContent = shown + (shown === 1 ? ' projeto' : ' projetos');
+    techPill.classList.toggle('on', !!state.tech);
+    techName.textContent = state.tech || '';
+  }
+  chips.forEach(c => c.addEventListener('click', () => {
+    state.cat = c.dataset.cat;
+    chips.forEach(x => x.setAttribute('aria-pressed', String(x === c)));
+    applyFilter();
+  }));
+  document.getElementById('techClear').addEventListener('click', () => { state.tech = null; applyFilter(); });
+
+  // tags da stack viram filtros quando algum projeto usa a tecnologia
+  const usedTech = new Set(projects.flatMap(p => p.dataset.tech.split('|')));
+  document.querySelectorAll('#stackGrid .tag').forEach(tag => {
+    const name = tag.textContent.trim();
+    if (!usedTech.has(name)) return;
+    const btn = document.createElement('button');
+    btn.className = 'tag'; btn.textContent = name; btn.title = 'Ver projetos com ' + name;
+    btn.addEventListener('click', () => {
+      state.tech = name; state.cat = 'all';
+      chips.forEach(x => x.setAttribute('aria-pressed', String(x.dataset.cat === 'all')));
+      applyFilter();
+      document.getElementById('projetos').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+    tag.replaceWith(btn);
+  });
+  applyFilter();
+
+  // brilho que segue o mouse nos cards
+  projects.forEach(p => p.addEventListener('mousemove', e => {
+    const r = p.getBoundingClientRect();
+    p.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    p.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }));
+
+  // ---------- Detalhes expansíveis ----------
+  document.querySelectorAll('.more').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', String(open));
+      btn.nextElementSibling.classList.toggle('open', open);
+    });
+  });
+
+  // ---------- Simulação do evento Java ----------
+  document.querySelectorAll('[data-flow]').forEach(flow => {
+    const steps = [...flow.querySelectorAll('.flow-step')];
+    const log = flow.querySelector('[data-log]');
+    const msgs = [
+      'NF-e 11444915 importada (Kalunga)…',
+      '3 itens lidos do XML…',
+      '546123 → EAN 7896075300489 → produto 20476',
+      '2 vínculos criados · NCM conferido ✓'
+    ];
+    let running = false;
+    flow.querySelector('[data-run]').addEventListener('click', () => {
+      if (running) return;
+      running = true;
+      steps.forEach(s => s.classList.remove('on'));
+      steps.forEach((s, i) => setTimeout(() => {
+        s.classList.add('on'); log.textContent = msgs[i];
+        if (i === steps.length - 1) running = false;
+      }, (reduceMotion ? 0 : 650) * i));
+    });
+  });
+
+  // ---------- Copiar e-mail ----------
+  const toast = document.getElementById('toast');
+  function showToast(msg){ toast.textContent = msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2200); }
+  document.getElementById('copyEmail').addEventListener('click', async e => {
+    const email = e.currentTarget.dataset.email;
+    try { await navigator.clipboard.writeText(email); showToast('E-mail copiado: ' + email); }
+    catch { showToast(email); }
+  });
 </script>
+
 </body>
 </html>
