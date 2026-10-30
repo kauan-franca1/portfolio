@@ -16,8 +16,10 @@
 :root{
   --bg:#fff; --fg:#000; --muted:#6d6d6d; --dark-section:#000; --line:#9a9a9a; --chip:#808080;
 }
+:root{--bz-y:#b8860b;--bz-o:#c26a0a;--bz-g1:#3f8f1f;--bz-g2:#5f9a14;--bz-g3:#2d7a24;--bz-g4:#7d9f0c;--bz-p:#6b7280}
 :root[data-theme="dark"]{
   --bg:#0b0b0d; --fg:#fff; --muted:#b9b9bf; --dark-section:#181818;
+  --bz-y:#f4d03f;--bz-o:#e8a23a;--bz-g1:#5db92d;--bz-g2:#8dc63f;--bz-g3:#3f9c2c;--bz-g4:#b5d334;--bz-p:#8d979b;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
@@ -52,20 +54,25 @@ h2.big{font-size:clamp(40px,6.5vw,78px);font-weight:300;letter-spacing:-2px;line
 
 /* ABOUT */
 .about{display:flex;flex-direction:column;gap:40px}
-.lotus-box{height:380px;display:flex;align-items:center;justify-content:center;perspective:1000px;overflow:hidden}
-.lotus{display:flex;flex-direction:column;align-items:center;gap:12px;transform-style:preserve-3d;transition:transform .15s ease-out;will-change:transform}
-.lotus pre{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;line-height:1.05;white-space:pre;user-select:none;transform:translateZ(24px)}
-.lotus .hint{font-size:14px;font-weight:500;letter-spacing:-.01em;opacity:.8;transform:translateZ(34px);white-space:nowrap}
 .cols{display:grid;grid-template-columns:repeat(2,minmax(200px,1fr));gap:64px}
 
-/* LOTUS ANIMATION */
-.lotus pre .ln{display:block;opacity:0;will-change:transform}
-#lotusBox.go .lotus pre .ln{animation:bloom 1s ease-out calc((var(--n) - var(--i)) * 70ms) both, sway 5s ease-in-out calc(var(--i) * -.4s) infinite alternate}
-#lotusBox.go .lotus pre{animation:breathe 6s ease-in-out infinite}
-@keyframes bloom{from{opacity:0}to{opacity:1}}
-@keyframes sway{from{transform:translateX(-3px) scaleX(.99)}to{transform:translateX(3px) scaleX(1.01)}}
-@keyframes breathe{0%,100%{translate:0 0;scale:1}50%{translate:0 -8px;scale:1.04}}
-@media (prefers-reduced-motion:reduce){.lotus pre .ln{opacity:1!important;animation:none!important}.lotus pre{animation:none!important}}
+/* BONSAI */
+.bonsai-wrap{display:flex;flex-direction:column;gap:24px}
+.bonsai-box{position:relative;height:440px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;outline-offset:4px}
+.bonsai-box pre{font-family:ui-monospace,Menlo,Consolas,"Courier New",monospace;font-size:14px;line-height:1.1;white-space:pre;user-select:none;color:var(--fg)}
+.bonsai-box pre .y{color:var(--bz-y)}
+.bonsai-box pre .o{color:var(--bz-o)}
+.bonsai-box pre .g1{color:var(--bz-g1)}
+.bonsai-box pre .g2{color:var(--bz-g2)}
+.bonsai-box pre .g3{color:var(--bz-g3)}
+.bonsai-box pre .g4{color:var(--bz-g4)}
+.bonsai-box pre .p{color:var(--bz-p)}
+.bonsai-box .bubble{position:absolute;right:5%;bottom:30%;border:1px solid var(--muted);border-radius:3px;padding:8px 14px;color:var(--fg);font:13px ui-monospace,Menlo,Consolas,monospace;opacity:0;transform:translateY(6px);transition:opacity .6s,transform .6s}
+.bonsai-box.done .bubble{opacity:1;transform:none}
+.bonsai-box .hint{position:absolute;bottom:10px;left:0;right:0;text-align:center;font:12px ui-monospace,Menlo,Consolas,monospace;color:var(--muted)}
+#leaves{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+.meaning{max-width:780px}
+.meaning strong{color:var(--fg);font-weight:500}
 
 /* CONTACT ICONS */
 .links .pill{align-items:center;gap:10px}
@@ -126,12 +133,14 @@ h2.big{font-size:clamp(40px,6.5vw,78px);font-weight:300;letter-spacing:-2px;line
   .hero .foot{left:20px}
   .hero{padding:20px}
   .skills{grid-template-columns:1fr}
-  .lotus pre{font-size:9px}
+  .bonsai-box .bubble{display:none}
+  .bonsai-box{height:380px}
 }
 @media (prefers-reduced-motion:reduce){.reveal,.hero h1 .c{transition:none;opacity:1;transform:none;filter:none}}
 </style>
 </head>
 <body>
+<canvas id="leaves" aria-hidden="true"></canvas>
 
 <header class="hero" id="topo">
   <canvas id="liquid" aria-hidden="true"></canvas>
@@ -147,27 +156,13 @@ h2.big{font-size:clamp(40px,6.5vw,78px);font-weight:300;letter-spacing:-2px;line
 
 <section class="wrap about" id="sobre">
   <div class="small">01 / SOBRE MIM</div>
-  <div class="lotus-box" id="lotusBox">
-    <div class="lotus" id="lotus" role="img" aria-label="Flor de lótus interativa">
-<pre>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠤⠤⣄⠀⢀⠔⠱⢦⡀⢠⡞⠤⠽⢦⠀⢀⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠒⣄⡈⣷⠞⠀⠀⠀⣹⠏⠀⠐⠈⣼⠗⢩⣤⣾⢹⡄⣠⣖⠇⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⡯⠂⢙⢿⠀⠀⠀⡰⡍⠀⠀⠠⣡⡎⡌⣭⠃⡇⣷⠟⠁⣟⡇⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢰⡩⠐⣤⡀⡾⣡⢃⢧⠀⡰⣴⡀⢀⣶⣹⠟⣶⢆⣴⣷⢠⣼⢿⡖⢱⠃⢠⠔⣟⡇⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⢀⠤⡤⣗⡃⣴⣯⣿⡕⣺⡞⣾⡧⠛⠫⣯⡿⠛⢙⢿⠿⣼⡿⠋⢹⡚⡠⢸⣄⠚⠴⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠈⡞⠄⠉⡣⣿⣾⢿⡂⠉⢷⢪⣰⠆⠀⠉⠑⡴⠉⠀⠀⢈⢣⡀⡾⣎⠀⢨⡏⠠⢁⠃⠀⣀⣠⢤⣦⡄⠤⠤⣤
-⡖⠖⠼⢦⣀⠀⠫⡱⢬⣻⣆⠙⢣⣊⣴⡈⢀⢸⠔⠠⠀⠀⠀⠘⣹⠏⠄⣤⣔⡷⣡⠞⣺⠽⢒⣪⣟⡟⠀⢀⣷⠋
-⠘⢅⡢⠈⢗⠀⠘⢻⣶⡨⡰⢦⣄⠠⠶⠈⠠⠘⠀⠀⠀⠀⢐⢺⠁⠀⠈⡆⡛⡵⠟⣊⠔⡪⢞⣥⡾⡀⣴⠟⠁⠀
-⠀⠀⠙⠷⣄⡓⢄⠘⣿⣿⣦⡠⢀⠑⢤⣰⠔⠊⠉⠑⠤⢀⢈⢇⠀⠀⠀⣨⠮⠒⣉⠔⠛⣢⣞⣡⠴⠊⠀⠀⠀⠀
-⠀⠀⠀⣀⣀⡙⠳⢿⣞⣿⣿⣿⣮⣵⣂⢗⠀⢄⠀⠀⠀⠀⠹⠀⢀⠄⠪⠐⡒⢈⣠⠴⠾⠚⠋⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠻⣿⣿⣿⣿⣿⡉⢍⠉⠉⢟⠫⢭⡿⡶⠄⢀⣀⠀⣠⠾⢒⠁⠵⣆⠷⢿⡟⡛⠛⠱⠲⠶⢠⣤⣄⣀⣀⠀⠀
-⠀⠀⠀⠀⠉⠛⠛⢛⣻⣾⣦⣦⣤⣁⣂⣑⣿⣿⣿⣿⣷⣾⣶⣿⣿⠟⠁⠀⠀⠀⠉⠒⠫⠄⡀⠀⠀⠉⣉⡿⠛⠀
-⠀⠀⢀⣠⡤⠶⣿⣿⣿⣿⣿⡿⣿⡿⠿⣟⣝⠾⠿⢿⣿⠿⢿⢻⣿⠳⣶⣤⣀⡀⠀⠀⠀⠀⠀⠙⠛⠥⡀⠀⠀⠀
-⠀⠸⠯⠄⣀⠀⠠⠤⠔⠒⠛⠉⠁⠀⠐⡟⠈⠁⠀⠀⠀⠀⠎⣺⠏⠀⠀⠉⠙⠛⠳⠶⠶⢄⣤⣠⡤⠞⠃⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣄⠀⠀⠀⢀⡠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠒⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
-      <div class="hint">Mova o cursor · toque para interagir</div>
+  <div class="bonsai-wrap">
+    <div class="bonsai-box" id="bonsaiBox" role="button" tabindex="0" aria-label="Árvore bonsai em ASCII. Clique para fazer crescer outra árvore.">
+      <pre id="bonsai" aria-hidden="true"></pre>
+      <div class="bubble">kauan says hi!</div>
+      <div class="hint">clique para crescer outra árvore</div>
     </div>
+    <p class="body muted meaning reveal"><strong>Bonsai</strong> (盆栽, “planta em bandeja”) é a arte japonesa de cultivar árvores em miniatura: paciência, poda e cuidado constante. Crescer devagar, com intenção.</p>
   </div>
   <h2 class="big reveal">Tecnologia só importa quando resolve algo real.</h2>
   <div class="cols reveal">
@@ -316,26 +311,123 @@ h2.big{font-size:clamp(40px,6.5vw,78px);font-weight:300;letter-spacing:-2px;line
   els.forEach(function(e,i){e.style.transitionDelay=(i%5)*80+'ms';io.observe(e)});
 })();
 
-/* ---------- lótus 3D ---------- */
+/* ---------- bonsai ASCII ---------- */
 (function(){
-  var box=document.getElementById('lotusBox'), l=document.getElementById('lotus');
-  function tilt(x,y){
-    var r=box.getBoundingClientRect(), nx=(x-r.left)/r.width-.5, ny=(y-r.top)/r.height-.5;
-    l.style.transform='rotateY('+(nx*24)+'deg) rotateX('+(-ny*24)+'deg)';
+  var W=60,H=26,box=document.getElementById('bonsaiBox'),pre=document.getElementById('bonsai');
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches, rnd=Math.random;
+  function rep(c,n){return new Array(n+1).join(c)}
+  var POT=[
+    ':'+rep('_',11)+'./~~~\\.'+rep('_',11),
+    ' \\'+rep(' ',26)+'/ ',
+    '  \\'+rep('_',24)+'/  ',
+    '   (_)'+rep(' ',16)+'(_)'+rep(' ',5)
+  ];
+  var ESC={'&':'&amp;','<':'&lt;','>':'&gt;'}, cur=null, timer=null, leafCells=[];
+  function build(){
+    var g=[],y,i;
+    for(y=0;y<H;y++)g.push(new Array(W));
+    var potX=Math.floor((W-30)/2), potY=H-4, cx=potX+15, maxT=0;
+    POT.forEach(function(line,j){for(i=0;i<line.length;i++)if(line[i]!==' ')g[potY+j][potX+i]={ch:line[i],k:'p',t:0,w:true}});
+    function put(x,y,ch,k,t,wood){
+      if(x<0||x>=W||y<0||y>=potY)return;
+      var c=g[y][x]; if(c&&(c.w||!wood))return;
+      g[y][x]={ch:ch,k:k,t:t,w:wood}; if(t>maxT)maxT=t;
+    }
+    function wk(){return rnd()<.7?'y':'o'}
+    function lk(){var r=rnd();return r<.3?'g1':r<.55?'g2':r<.78?'g3':r<.92?'g4':'o'}
+    function leaf(x,y,t){put(x,y,'&',lk(),t,false)}
+    function tip(x,y,t,n,spread){
+      for(var k=0;k<n;k++){
+        var ox=Math.round((rnd()+rnd()-1)*spread), oy=Math.round((rnd()+rnd()-1)*1.6)-1;
+        leaf(x+ox,y+oy,t+1+Math.floor(rnd()*4));
+      }
+    }
+    function branch(x,y,len,dx,dy0,depth,t0){
+      var t=t0;
+      for(var i=0;i<len;i++){
+        var dy=dy0; if(dy0===0&&rnd()<.35)dy=-1;
+        x+=dx; y+=dy; t+=1;
+        put(x,y,dy===0?'~':(dx>0?'/':'\\'),wk(),t,true);
+        if(i>=len*.4&&rnd()<.8)leaf(x+(rnd()<.5?-1:1),y-1,t+1);
+        if(i>=len*.4&&rnd()<.6){leaf(x,y-1,t+1);leaf(x+1,y,t+1)}
+        if(depth<2&&i>1&&i<len-1&&rnd()<.22)branch(x,y,Math.ceil(len*.55),dx,rnd()<.5?-1:0,depth+1,t);
+      }
+      tip(x,y,t,depth===0?26:16,depth===0?4:3);
+    }
+    var len=15+Math.floor(rnd()*3), x=cx, yy=potY-1, side=rnd()<.5?-1:1;
+    put(x-1,yy,'/','y',0,true); put(x,yy,'|','y',0,true); put(x+1,yy,'\\','y',0,true);
+    for(i=1;i<=len;i++){
+      var dx=0,r=rnd();
+      if(i>2){dx=r<.3?-1:(r<.6?1:0); if(x<cx-2)dx=Math.abs(dx); if(x>cx+2)dx=-Math.abs(dx);}
+      x+=dx; yy-=1;
+      put(x,yy,dx===0?'|':(dx>0?'/':'\\'),wk(),i,true);
+      if(i>=4&&i<len&&(i%2===0||rnd()<.3)){
+        var frac=i/len, bl=Math.round(3+(1-frac)*9*(.65+rnd()*.5));
+        var up=frac<.45?0:(rnd()<.5?-1:0);
+        side=-side;
+        branch(x,yy,bl,side,up,0,i);
+        if(rnd()<.35)branch(x,yy,Math.max(3,bl-2),-side,up,0,i);
+      }
+    }
+    tip(x,yy,len,48,4);
+    return {g:g,maxT:maxT};
   }
-  box.addEventListener('mousemove',function(e){tilt(e.clientX,e.clientY)});
-  box.addEventListener('touchmove',function(e){var t=e.touches[0];tilt(t.clientX,t.clientY)},{passive:true});
-  box.addEventListener('mouseleave',function(){l.style.transform='none'});
-  box.addEventListener('touchend',function(){l.style.transform='none'});
-})();
+  function render(tick){
+    var s='',x,y,c;
+    for(y=0;y<H;y++){
+      for(x=0;x<W;x++){
+        c=cur.g[y][x];
+        s+=(c&&c.t<=tick)?'<span class="'+c.k+'">'+(ESC[c.ch]||c.ch)+'</span>':' ';
+      }
+      s+='\n';
+    }
+    pre.innerHTML=s;
+  }
+  function fit(){var w=box.clientWidth-24;pre.style.fontSize=Math.max(6,Math.min(14,w/(W*.602)))+'px'}
+  function grow(){
+    clearInterval(timer); box.classList.remove('done');
+    cur=build(); var tick=0; leafCells=[];
+    cur.g.forEach(function(row,yy){row.forEach(function(c,xx){if(c&&c.ch==='&')leafCells.push({x:xx,y:yy})})});
+    if(reduce){render(99999);box.classList.add('done');return}
+    render(0);
+    timer=setInterval(function(){
+      tick++; render(tick);
+      if(tick>cur.maxT+2){clearInterval(timer);box.classList.add('done')}
+    },60);
+  }
+  /* ---- folhas caindo ---- */
+  var cv=document.getElementById('leaves'), ctx=cv.getContext('2d'), leaves=[], last=0, acc=0;
+  var PAL={light:['#3f8f1f','#5f9a14','#2d7a24','#7d9f0c','#c26a0a','#b8860b'],dark:['#5db92d','#8dc63f','#3f9c2c','#b5d334','#e8a23a','#f4d03f']};
+  function sizeCv(){var d=Math.min(devicePixelRatio||1,2);cv.width=innerWidth*d;cv.height=innerHeight*d;ctx.setTransform(d,0,0,d,0,0)}
+  function spawn(){
+    if(!leafCells.length)return;
+    var c=leafCells[(rnd()*leafCells.length)|0], r=pre.getBoundingClientRect();
+    leaves.push({x0:r.left+scrollX+(c.x+.5)*r.width/W,y:r.top+scrollY+(c.y+.5)*r.height/H,vy:18+rnd()*20,ph:rnd()*6.3,sw:.5+rnd()*.7,amp:14+rnd()*26,
+      rot:rnd()*6.3,vr:(rnd()-.5)*.9,k:(rnd()*6)|0,sz:11+rnd()*8,age:0,x:0});
+  }
+  function loop(ts){
+    var dt=Math.min(.05,((ts-last)/1000)||0); last=ts;
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    if(box.classList.contains('done')&&!document.hidden){acc+=dt;if(acc>.7&&leaves.length<80){acc=0;spawn()}}
+    var pal=PAL[document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light'], H2=document.documentElement.scrollHeight;
+    ctx.textAlign='center';ctx.textBaseline='middle';
+    for(var i=leaves.length-1;i>=0;i--){
+      var l=leaves[i]; l.age+=dt; l.y+=l.vy*dt; l.rot+=l.vr*dt; l.x=l.x0+Math.sin(l.ph+l.age*l.sw)*l.amp;
+      if(l.y>H2+20){leaves.splice(i,1);continue}
+      var sx=l.x-scrollX, sy=l.y-scrollY;
+      if(sy<-20||sy>innerHeight+20)continue;
+      ctx.save();ctx.translate(sx,sy);ctx.rotate(l.rot);ctx.globalAlpha=.85;
+      ctx.fillStyle=pal[l.k];ctx.font=l.sz+'px ui-monospace,Menlo,Consolas,monospace';ctx.fillText('&',0,0);ctx.restore();
+    }
+    requestAnimationFrame(loop);
+  }
+  if(!reduce){sizeCv();addEventListener('resize',sizeCv);requestAnimationFrame(loop)}else{cv.style.display='none'}
 
-/* ---------- animação da lótus ---------- */
-(function(){
-  var pre=document.querySelector('#lotus pre'), box=document.getElementById('lotusBox');
-  var lines=pre.textContent.split('\n');
-  pre.innerHTML=lines.map(function(l,i){return '<span class="ln" style="--i:'+i+';--n:'+lines.length+'">'+l+'</span>'}).join('');
-  if(!('IntersectionObserver' in window)){box.classList.add('go');return;}
-  new IntersectionObserver(function(e,o){if(e[0].isIntersecting){box.classList.add('go');o.disconnect()}},{threshold:.3}).observe(box);
+  fit(); addEventListener('resize',fit);
+  box.addEventListener('click',grow);
+  box.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();grow()}});
+  if(!('IntersectionObserver' in window)){grow();return}
+  new IntersectionObserver(function(e,o){if(e[0].isIntersecting){grow();o.disconnect()}},{threshold:.3}).observe(box);
 })();
 
 /* ---------- ícones das habilidades ---------- */
