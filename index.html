@@ -1,359 +1,155 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kauan Silva França — Portfólio</title>
-<meta name="description" content="Desenvolvedor & Analista de Dados — integrações, automação e IA aplicada com Python, Java, SQL e ERP Sankhya.">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kauan França — Desenvolvimento &amp; Dados</title>
+<meta name="description" content="Portfólio de Kauan Silva França. Integrações, automação e IA aplicada com Python, Java, SQL e ERP Sankhya.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kauan França — Desenvolvimento &amp; Dados">
+<meta property="og:description" content="Portfólio de Kauan Silva França. Integrações, automação e IA aplicada com Python, Java, SQL e ERP Sankhya.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#FAFAFA;
-    --bg-alt:#F1F1EF;
-    --surface:#FFFFFF;
-    --ink:#15161A;
-    --ink-soft:#63656E;
-    --line:rgba(21,22,26,0.10);
-    --accent:#000000;
-    --accent-ink:#000000;
-    --bg-dark:#0B0B0D;
-    --surface-dark:#18191D;
-    --paper:#F4F4F2;
-    --paper-soft:#9A9AA3;
-    --line-dark:rgba(244,244,242,0.12);
-    --radius:14px;
-    --ease:cubic-bezier(.16,.84,.44,1);
-  }
+:root{
+  --bg:#fff; --fg:#000; --muted:#6d6d6d; --dark-section:#000; --line:#9a9a9a; --chip:#808080;
+}
+:root[data-theme="dark"]{
+  --bg:#0b0b0d; --fg:#fff; --muted:#b9b9bf; --dark-section:#181818;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  font-family:Inter,"Inter Placeholder",sans-serif;background:var(--bg);color:var(--fg);
+  transition:background .3s,color .3s;
+}
+a{color:inherit}
+.small{font-size:12px;line-height:1.4em;letter-spacing:-.02em;font-weight:400}
+.body{font-size:18px;line-height:1.6em;letter-spacing:-.02em;font-weight:400}
+h2.big{font-size:clamp(40px,6.5vw,78px);font-weight:300;letter-spacing:-2px;line-height:1.1em}
+.muted{color:var(--muted)}
+.wrap{max-width:1158px;margin:0 auto;padding:120px 40px}
 
-  /* --- FORÇANDO LETRAS BRANCAS NO DARK THEME --- */
-  html[data-theme="dark"] {
-    --ink: #FFFFFF;
-    --ink-soft: #EBEBEB;
-    --paper: #FFFFFF;
-    --paper-soft: #EBEBEB;
-    --accent: #FFFFFF;
-    --accent-ink: #FFFFFF;
-    --line: rgba(244,244,242,0.12);
-  }
+/* HERO */
+.hero{position:relative;height:820px;min-height:100svh;max-height:1000px;background:#000;color:#fff;
+  display:flex;align-items:center;justify-content:center;padding:40px;overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.masthead{position:absolute;top:28px;left:40px;right:40px;max-width:1600px;display:flex;align-items:center;gap:20px;z-index:2}
+.masthead .name{flex:1;font-size:18px}
+.masthead .tag{flex:1}
+.pill{display:inline-flex;border:1px solid #ffffff4d;border-radius:75px;padding:11px 28px;text-decoration:none;color:#fff;transition:background .2s}
+.pill:hover{background:#ffffff1f}
+.theme-btn{border:1px solid #fff;color:#fff;background:#ffffff14;padding:8px 12px;border-radius:999px;cursor:pointer;
+  backdrop-filter:blur(6px);font:600 14px/1em Inter,sans-serif;letter-spacing:-.01em;white-space:nowrap}
+.hero h1{position:relative;z-index:1;font-size:clamp(52px,13.3vw,160px);font-weight:400;letter-spacing:-.037em;line-height:1em;
+  text-align:center;max-width:1600px;pointer-events:none}
+.hero h1 .w{white-space:nowrap}
+.hero h1 .c{display:inline-block;opacity:0;filter:blur(12px);transform:translateY(18px);transition:opacity .8s,filter .8s,transform .8s}
+.hero h1.in .c{opacity:1;filter:blur(0);transform:none}
+.hero .foot{position:absolute;left:40px;bottom:32px;z-index:2}
 
-  html[data-theme="dark"] body,
-  html[data-theme="dark"] h1,
-  html[data-theme="dark"] h2,
-  html[data-theme="dark"] h3,
-  html[data-theme="dark"] p,
-  html[data-theme="dark"] a,
-  html[data-theme="dark"] span,
-  html[data-theme="dark"] li,
-  html[data-theme="dark"] .tag,
-  html[data-theme="dark"] .proj-metric span,
-  html[data-theme="dark"] footer .wrap span,
-  html[data-theme="dark"] .proj-num {
-    color: #FFFFFF !important;
-  }
-  html[data-theme="dark"] .ink-soft { color: #EBEBEB !important; }
+/* ABOUT */
+.about{display:flex;flex-direction:column;gap:40px}
+.lotus-box{height:380px;display:flex;align-items:center;justify-content:center;perspective:1000px;overflow:hidden}
+.lotus{display:flex;flex-direction:column;align-items:center;gap:12px;transform-style:preserve-3d;transition:transform .15s ease-out;will-change:transform}
+.lotus pre{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;line-height:1.05;white-space:pre;user-select:none;transform:translateZ(24px)}
+.lotus .hint{font-size:14px;font-weight:500;letter-spacing:-.01em;opacity:.8;transform:translateZ(34px);white-space:nowrap}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(200px,1fr));gap:64px}
 
-  html[data-theme="dark"] .btn-accent,
-  html[data-theme="dark"] .btn-primary {
-    background: #FFFFFF !important;
-    color: #000000 !important;
-  }
+/* LOTUS ANIMATION */
+.lotus pre .ln{display:block;opacity:0;will-change:transform}
+#lotusBox.go .lotus pre .ln{animation:bloom 1s ease-out calc((var(--n) - var(--i)) * 70ms) both, sway 5s ease-in-out calc(var(--i) * -.4s) infinite alternate}
+#lotusBox.go .lotus pre{animation:breathe 6s ease-in-out infinite}
+@keyframes bloom{from{opacity:0}to{opacity:1}}
+@keyframes sway{from{transform:translateX(-3px) scaleX(.99)}to{transform:translateX(3px) scaleX(1.01)}}
+@keyframes breathe{0%,100%{translate:0 0;scale:1}50%{translate:0 -8px;scale:1.04}}
+@media (prefers-reduced-motion:reduce){.lotus pre .ln{opacity:1!important;animation:none!important}.lotus pre{animation:none!important}}
 
-  .band-dark h2, .band-dark h3, .band-dark p, .band-dark span, .band-dark li, .band-dark .tag, .band-dark .t-date { color: #FFFFFF !important; }
-  .band-dark .ink-soft { color: #EBEBEB !important; }
-  /* --------------------------------------------- */
+/* CONTACT ICONS */
+.links .pill{align-items:center;gap:10px}
+.links .pill svg{width:18px;height:18px;flex:none}
+.links a.t{display:inline-flex;align-items:center;gap:8px;font-size:14px}
+.links a.t svg{width:20px;height:20px;fill:currentColor;flex:none}
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:'Inter',sans-serif; font-size:17px; line-height:1.6;
-    -webkit-font-smoothing:antialiased; overflow-x:hidden;
-  }
-  html[data-theme="dark"] body{ background:var(--bg-dark); }
-  button{ font-family:inherit; }
+/* PROJECTS */
+.projects{display:flex;flex-direction:column;gap:40px}
+.filters{display:flex;flex-wrap:wrap;gap:12px}
+.chip{background:none;color:var(--fg);border:1px solid var(--chip);border-radius:75px;padding:10px 22px;cursor:pointer;font:400 12px/1.4em Inter,sans-serif;letter-spacing:-.02em;transition:border-width .15s}
+.chip[aria-pressed="true"]{border-width:2px;padding:9px 21px}
+.row{border-top:1px solid var(--line);padding:40px 0;display:flex;flex-direction:column;gap:20px}
+.row[hidden]{display:none}
+.row h3{font-size:clamp(26px,3.4vw,39px);font-weight:500;letter-spacing:-.02em;line-height:1.2em}
+.row p.desc{max-width:780px}
+.row a.link{text-decoration:none;color:var(--fg);transition:color .2s}
+.row a.link:hover{color:var(--muted)}
+.det-btn{align-self:flex-start;background:none;color:var(--fg);border:1px solid var(--chip);border-radius:75px;padding:10px 20px;cursor:pointer;font:400 12px/1.4em Inter,sans-serif;letter-spacing:-.02em}
+.det{max-width:780px;display:none;gap:8px;flex-wrap:wrap}
+.det.open{display:flex}
+.det span{border:1px solid var(--chip);border-radius:75px;padding:6px 14px;font-size:12px}
 
-  h1,h2,h3{ font-family:'Space Grotesk', sans-serif; margin:0; letter-spacing:-0.02em; font-weight:600; }
+/* STACK */
+.stack{background:var(--dark-section);color:#fff;transition:background .3s}
+.stack .inner{max-width:1078px;margin:0 auto;padding:120px 40px;display:flex;flex-direction:column;gap:40px}
+.stack h2{color:#fff}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(200px,1fr));gap:40px}
+.card{border-top:1px solid #636363;padding:24px 16px;display:flex;flex-direction:column;gap:20px}
+.card h4{font-size:24px;font-weight:500;letter-spacing:-.02em}
+.card li{list-style:none;display:flex;align-items:center;gap:12px;font-size:18px;letter-spacing:-.02em;margin-bottom:20px}
+.card li:last-child{margin-bottom:0}
+.card li .ic{width:24px;height:24px;flex:none;display:block;object-fit:contain}
+.card li .ic svg{width:24px;height:24px;display:block}
+.exp h5{font-size:30px;font-weight:500;letter-spacing:-.02em;margin-top:24px}
+.exp p{margin-top:12px;max-width:780px}
 
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
-    color:var(--accent-ink); display:inline-flex; align-items:center; gap:8px;
-  }
-  html[data-theme="dark"] .eyebrow{ color:var(--accent); }
-  .eyebrow::before{ content:""; width:6px;height:6px;border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(0,0,0,0.18); }
+/* CONTACT */
+.contact{display:flex;flex-direction:column;gap:40px;padding-bottom:40px}
+.links{display:flex;flex-wrap:wrap;gap:28px;align-items:center}
+.links .pill{border-color:var(--fg);color:var(--fg);padding:11px 33px;font-size:16px;font-weight:500}
+.links .pill:hover{background:var(--fg);color:var(--bg)}
+.links a.t{text-decoration:none;transition:color .2s}
+.links a.t:hover{color:var(--muted)}
 
-  a{ color:inherit; }
-  .wrap{ max-width:1120px; margin:0 auto; padding:0 32px; }
-  section{ position:relative; padding:120px 0; }
-  @media(max-width:640px){ section{ padding:80px 0; } .wrap{ padding:0 22px; } }
+/* reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
 
-  .band-dark{ background:var(--bg-dark); color:var(--paper); }
-  .band-dark .eyebrow{ color:#FFFFFF; }
-  .band-dark .eyebrow::before{ background:#FFFFFF; }
-  .ink-soft{ color:var(--ink-soft); }
-  .section-title{ font-size:clamp(30px,4.6vw,46px); margin-top:18px; }
-
-  /* ---------- NAV ---------- */
-  header{
-    position:fixed; top:0; left:0; right:0; z-index:50; padding:22px 0;
-    transition:background .4s var(--ease), border-color .4s var(--ease), padding .3s var(--ease);
-    border-bottom:1px solid transparent;
-  }
-  header.scrolled{
-    background:rgba(250,250,250,0.72); backdrop-filter:blur(14px) saturate(160%); -webkit-backdrop-filter:blur(14px) saturate(160%);
-    border-color:var(--line); padding:14px 0;
-  }
-  html[data-theme="dark"] header.scrolled{ background:rgba(11,11,13,0.72); border-color:var(--line-dark); }
-  nav.wrap{ display:flex; align-items:center; justify-content:space-between; }
-  .brand{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; text-decoration:none; }
-  .nav-links{ display:flex; align-items:center; gap:34px; list-style:none; margin:0; padding:0; }
-  .nav-links a{ font-size:14px; text-decoration:none; color:var(--ink-soft); transition:color .25s var(--ease); position:relative; }
-  .nav-links a::after{ content:""; position:absolute; left:0; right:100%; bottom:-5px; height:1.5px; background:var(--accent); transition:right .35s var(--ease); }
-  .nav-links a:hover, .nav-links a.active{ color:var(--accent-ink); }
-  .nav-links a.active::after{ right:0; }
-  .nav-right{ display:flex; align-items:center; gap:12px; }
-  .theme-toggle{
-    width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--surface);
-    display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink);
-    transition:transform .25s var(--ease), border-color .25s var(--ease);
-  }
-  .theme-toggle:hover{ transform:scale(1.06) rotate(12deg); border-color:var(--accent); }
-  html[data-theme="dark"] .theme-toggle{ background:var(--surface-dark); border-color:var(--line-dark); }
-  .theme-toggle svg{ width:16px; height:16px; }
-  @media(max-width:760px){ .nav-links{ display:none; } }
-
-  /* ---------- CURRENT / signature thread ---------- */
-  .current-rail{ position:fixed; top:0; left:28px; bottom:0; width:2px; z-index:40; background:var(--line); pointer-events:none; }
-  html[data-theme="dark"] .current-rail{ background:var(--line-dark); }
-  .current-fill{ position:absolute; top:0; left:0; width:100%; height:0%; background:linear-gradient(180deg, var(--accent), rgba(0,0,0,0.15)); transition:height .05s linear; }
-  .current-dot{ position:absolute; bottom:0; left:50%; transform:translate(-50%,50%); width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 5px rgba(0,0,0,0.20), 0 0 14px rgba(0,0,0,0.55); }
-  @media(max-width:900px){ .current-rail{ display:none; } }
-
-  /* ---------- BUTTONS ---------- */
-  .btn{
-    display:inline-flex; align-items:center; gap:10px; padding:14px 26px; border-radius:999px;
-    font-family:'Inter'; font-size:14.5px; font-weight:500; text-decoration:none; cursor:pointer; border:1px solid transparent;
-    transition:transform .3s var(--ease), background .3s var(--ease), border-color .3s var(--ease);
-  }
-  .btn:hover{ transform:translateY(-2px); }
-  .btn-primary{ background:var(--ink); color:var(--bg); }
-  .btn-ghost{ border-color:var(--line); color:var(--ink); background:transparent; }
-  html[data-theme="dark"] .btn-ghost{ border-color:var(--line-dark); }
-  .btn-ghost:hover{ border-color:var(--accent); }
-  .btn-accent{ background:var(--accent); color:#FFFFFF; }
-
-  /* ---------- HERO ---------- */
-  .hero{ padding-top:220px; padding-bottom:100px; }
-  .hero h1{ font-size:clamp(42px,7.4vw,88px); line-height:1.02; margin-top:22px; }
-  .hero .role{ font-size:clamp(20px,2.6vw,28px); color:var(--ink-soft); font-family:'Space Grotesk'; font-weight:500; margin:14px 0 0; }
-  .rotator{ font-family:'IBM Plex Mono', monospace; font-size:15px; margin:14px 0 0; color:var(--ink-soft); min-height:24px; }
-  .rotator .word{ color:var(--ink); border-bottom:1px solid var(--accent); }
-  .caret{ display:inline-block; width:8px; height:17px; margin-left:3px; vertical-align:-3px; background:var(--ink); animation:blink 1s steps(1) infinite; }
-  @keyframes blink{ 50%{ opacity:0; } }
-  .hero p.desc{ max-width:580px; margin-top:22px; font-size:17px; color:var(--ink-soft); }
-  .hero .actions{ margin-top:38px; display:flex; gap:14px; flex-wrap:wrap; }
-
-  .hero-stats{ margin-top:56px; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .hero-stats div{ padding:22px 18px 22px 0; }
-  .hero-stats strong{ display:block; font-family:'Space Grotesk'; font-size:30px; font-weight:600; }
-  .hero-stats span{ font-size:13px; color:var(--ink-soft); }
-  @media(max-width:700px){ .hero-stats{ grid-template-columns:repeat(2,1fr); } }
-
-  .hero-visual{
-    margin-top:64px; border-radius:20px; overflow:hidden; border:1px solid var(--line); background:var(--surface);
-    display:flex; align-items:center; justify-content:center; position:relative;
-  }
-  html[data-theme="dark"] .hero-visual{ border-color:var(--line-dark); background:var(--surface-dark); }
-  .bonsai-art{
-    font-family:'IBM Plex Mono', monospace; font-size:clamp(5px, 1.1vw, 12px); line-height:1.15; color:var(--ink);
-    text-align:center; margin:0; padding:60px 20px; user-select:none; white-space:pre;
-    transition:transform .6s var(--ease); will-change:transform;
-  }
-  .hero-visual .hint{ position:absolute; right:16px; bottom:12px; font-family:'IBM Plex Mono'; font-size:11px; color:var(--ink-soft); }
-
-  /* ---------- REVEAL ---------- */
-  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
-  .reveal.in{ opacity:1; transform:translateY(0); }
-
-  /* ---------- SOBRE ---------- */
-  .sobre-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; margin-top:44px; align-items:start; }
-  .sobre-grid p{ margin:0 0 20px; color:var(--ink-soft); }
-  .sobre-grid p:last-child{ margin-bottom:0; }
-  @media(max-width:840px){ .sobre-grid{ grid-template-columns:1fr; gap:28px; } }
-
-  /* ---------- STACK ---------- */
-  .stack-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:52px; background:var(--line-dark); border:1px solid var(--line-dark); border-radius:var(--radius); overflow:hidden; }
-  @media(max-width:900px){ .stack-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media(max-width:600px){ .stack-grid{ grid-template-columns:1fr; } }
-  .stack-cell{ background:var(--bg-dark); padding:32px; }
-  .stack-cell h3{ font-size:16px; color:#FFFFFF; margin-bottom:18px; }
-  .tag-row{ display:flex; flex-wrap:wrap; gap:9px; }
-  .tag{
-    font-family:'IBM Plex Mono'; font-size:12.5px; padding:7px 12px; border:1px solid var(--line-dark); border-radius:7px;
-    color:var(--paper-soft); background:transparent; transition:border-color .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
-  }
-  button.tag{ cursor:pointer; position:relative; }
-  button.tag::after{ content:""; position:absolute; top:5px; right:5px; width:4px; height:4px; border-radius:50%; background:#FFFFFF; opacity:.55; }
-  .tag:hover{ border-color:#FFFFFF; color:#FFFFFF; transform:translateY(-1px); }
-  .stack-hint{ margin-top:18px; font-family:'IBM Plex Mono'; font-size:12.5px; }
-
-  /* ---------- PROJETOS ---------- */
-  .filters{ margin-top:40px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
-  .chip{
-    font-family:'IBM Plex Mono'; font-size:12.5px; letter-spacing:.04em; padding:9px 15px; border-radius:999px;
-    border:1px solid var(--line); background:transparent; color:var(--ink); cursor:pointer;
-    transition:background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
-  }
-  .chip:hover{ border-color:var(--accent); }
-  .chip[aria-pressed="true"]{ background:#15161A; color:#FFFFFF; border-color:#15161A; }
-  html[data-theme="dark"] .chip{ color:#FFFFFF; border-color:var(--line-dark); }
-  html[data-theme="dark"] .chip[aria-pressed="true"]{ background:#FFFFFF; color:#000000; border-color:#FFFFFF; }
-  .tech-pill{ display:none; align-items:center; gap:8px; font-family:'IBM Plex Mono'; font-size:12.5px; padding:8px 8px 8px 14px; border-radius:999px; border:1px dashed var(--accent); }
-  .tech-pill.on{ display:inline-flex; }
-  .tech-pill button{ border:0; background:transparent; cursor:pointer; color:var(--ink); font-size:15px; line-height:1; padding:0 4px; }
-  .proj-count{ margin-left:auto; font-family:'IBM Plex Mono'; font-size:12.5px; color:var(--ink-soft); }
-
-  .proj-list{ margin-top:28px; display:flex; flex-direction:column; }
-  .proj{
-    position:relative; display:grid; grid-template-columns:70px 1fr auto; gap:28px; align-items:start;
-    padding:38px 18px; margin:0 -18px; border-top:1px solid var(--line); border-radius:12px;
-    transition:opacity .35s var(--ease), transform .35s var(--ease);
-  }
-  .proj::before{
-    content:""; position:absolute; inset:0; border-radius:12px; pointer-events:none; opacity:0;
-    background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(0,0,0,0.045), transparent 60%);
-    transition:opacity .3s var(--ease);
-  }
-  html[data-theme="dark"] .proj::before{ background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.06), transparent 60%); }
-  .proj:hover::before{ opacity:1; }
-  .proj.hide{ display:none; }
-  .proj.pop{ animation:pop .45s var(--ease); }
-  @keyframes pop{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
-  .proj-list .proj:last-child{ border-bottom:1px solid var(--line); }
-  .proj-num{ font-family:'IBM Plex Mono'; font-size:13px; color:var(--ink-soft); padding-top:6px; }
-  .proj-body h3{ font-size:23px; margin-bottom:10px; }
-  .proj-body > p{ color:var(--ink-soft); max-width:640px; margin:0 0 16px; }
-  .proj-metric{ display:inline-flex; align-items:baseline; gap:6px; margin-bottom:16px; font-family:'Space Grotesk'; font-weight:600; font-size:26px; color:var(--accent-ink); }
-  .proj-metric span{ font-family:'Inter'; font-weight:500; font-size:13px; color:var(--ink-soft); }
-  .proj-metric .num{ font-family:'Space Grotesk'; font-weight:600; font-size:26px; color:var(--accent-ink); }
-  .proj-tags{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:14px; }
-  .proj-tags span{ font-family:'IBM Plex Mono'; font-size:11.5px; padding:4px 9px; border-radius:6px; border:1px solid var(--line); color:var(--ink-soft); }
-  .more{
-    display:inline-flex; align-items:center; gap:8px; border:0; background:transparent; padding:0; cursor:pointer;
-    font-family:'IBM Plex Mono'; font-size:12.5px; color:var(--ink); letter-spacing:.04em;
-  }
-  .more .plus{ display:inline-block; transition:transform .3s var(--ease); }
-  .more[aria-expanded="true"] .plus{ transform:rotate(45deg); }
-  .details{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .45s var(--ease); }
-  .details > div{ overflow:hidden; }
-  .details.open{ grid-template-rows:1fr; }
-  .details ul{ margin:16px 0 0; padding-left:18px; color:var(--ink-soft); max-width:640px; font-size:15.5px; }
-  .details li{ margin-bottom:6px; }
-  .proj-link{ white-space:nowrap; font-size:14px; text-decoration:none; padding-top:8px; display:inline-flex; align-items:center; gap:6px; color:var(--ink); border-bottom:1px solid var(--accent); }
-  .proj-link .arr{ display:inline-block; transition:transform .3s var(--ease); }
-  .proj-link:hover .arr{ transform:translateX(4px); }
-  .proj-internal{ white-space:nowrap; font-family:'IBM Plex Mono'; font-size:12px; color:var(--ink-soft); padding-top:9px; }
-  @media(max-width:700px){ .proj{ grid-template-columns:1fr; gap:12px; } .proj-link, .proj-internal{ padding-top:0; } }
-
-  /* mini demo do evento Java */
-  .flow{ margin:18px 0 4px; border:1px solid var(--line); border-radius:12px; padding:18px; max-width:640px; }
-  .flow-steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
-  .flow-step{ border:1px solid var(--line); border-radius:9px; padding:12px; font-size:13px; line-height:1.35; color:var(--ink-soft); transition:border-color .3s var(--ease), background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease); }
-  .flow-step b{ display:block; font-family:'IBM Plex Mono'; font-size:11px; font-weight:500; margin-bottom:6px; color:var(--ink-soft); }
-  .flow-step.on{ border-color:var(--accent); color:var(--ink); transform:translateY(-2px); background:rgba(0,0,0,0.03); }
-  html[data-theme="dark"] .flow-step.on{ background:rgba(255,255,255,0.06); }
-  .flow-bar{ display:flex; align-items:center; gap:14px; margin-top:14px; }
-  .flow-log{ font-family:'IBM Plex Mono'; font-size:12px; color:var(--ink-soft); }
-  @media(max-width:640px){ .flow-steps{ grid-template-columns:1fr 1fr; } }
-
-  /* ---------- EXPERIÊNCIA ---------- */
-  .timeline{ margin-top:56px; position:relative; padding-left:34px; }
-  .timeline::before{ content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:var(--line-dark); }
-  .t-item{ position:relative; padding-bottom:46px; }
-  .t-item:last-child{ padding-bottom:0; }
-  .t-item::before{ content:""; position:absolute; left:-34px; top:5px; width:11px; height:11px; border-radius:50%; background:#FFFFFF; box-shadow:0 0 0 4px var(--bg-dark); }
-  .t-date{ font-family:'IBM Plex Mono'; font-size:12.5px; color:#FFFFFF; letter-spacing:0.06em; }
-  .t-item h3{ font-size:21px; margin:8px 0 6px; }
-  .t-item p{ color:var(--paper-soft); max-width:600px; margin:0; }
-  .band-dark .more{ color:#FFFFFF; margin-top:14px; }
-  .band-dark .details ul{ color:#EBEBEB; }
-
-  /* ---------- CONTATO ---------- */
-  .contato-inner{ text-align:center; max-width:640px; margin:0 auto; }
-  .contato-inner h2{ font-size:clamp(34px,5.4vw,58px); margin-top:20px; }
-  .contato-actions{ margin-top:40px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-
-  .toast{
-    position:fixed; left:50%; bottom:28px; transform:translate(-50%, 20px); opacity:0; pointer-events:none; z-index:60;
-    background:#15161A; color:#FFFFFF; font-family:'IBM Plex Mono'; font-size:13px; padding:12px 18px; border-radius:999px;
-    transition:opacity .3s var(--ease), transform .3s var(--ease);
-  }
-  html[data-theme="dark"] .toast{ background:#FFFFFF; color:#000000 !important; }
-  .toast.show{ opacity:1; transform:translate(-50%, 0); }
-
-  footer{ padding:34px 0; border-top:1px solid var(--line); }
-  html[data-theme="dark"] footer{ border-color:var(--line-dark); }
-  footer .wrap{ display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--ink-soft); }
-  @media(max-width:600px){ footer .wrap{ flex-direction:column; gap:10px; text-align:center; } }
-
-  ::selection{ background:var(--accent); color:#FFFFFF; }
-  html[data-theme="dark"] ::selection{ color:#000000; }
-
-  @media (prefers-reduced-motion: reduce){
-    *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
-  }
+@media (max-width:900px){
+  .skills{grid-template-columns:1fr 1fr}
+  .cols{grid-template-columns:1fr;gap:24px}
+}
+@media (max-width:640px){
+  .wrap,.stack .inner{padding:80px 20px}
+  .masthead{left:20px;right:20px;flex-wrap:wrap;gap:12px}
+  .masthead .tag{display:none}
+  .hero .foot{left:20px}
+  .hero{padding:20px}
+  .skills{grid-template-columns:1fr}
+  .lotus pre{font-size:9px}
+}
+@media (prefers-reduced-motion:reduce){.reveal,.hero h1 .c{transition:none;opacity:1;transform:none;filter:none}}
 </style>
 </head>
 <body>
 
-<div class="current-rail"><div class="current-fill" id="currentFill"><div class="current-dot"></div></div></div>
-
-<header id="siteHeader">
-  <nav class="wrap">
-    <a href="#hero" class="brand">Kauan França</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#experiencia">Experiência</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
-        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <circle cx="12" cy="12" r="4.2"></circle>
-          <path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>
-        </svg>
-      </button>
-    </div>
-  </nav>
+<header class="hero" id="topo">
+  <canvas id="liquid" aria-hidden="true"></canvas>
+  <div class="masthead">
+    <div class="name">kauan frança</div>
+    <div class="tag small">PORTFÓLIO / 2026</div>
+    <a class="pill small" href="#projetos">Explorar projetos</a>
+    <button class="theme-btn" id="theme" type="button" aria-pressed="false">Modo noturno</button>
+  </div>
+  <h1 id="title" aria-label="</Dev & Data Science/>">&lt;/Dev &amp; Data Science/&gt;</h1>
+  <div class="foot small">UFABC · NEOSOLAR</div>
 </header>
 
-<section class="hero" id="hero">
-  <div class="wrap">
-    <span class="eyebrow reveal">Portfólio — Dados & Engenharia</span>
-    <h1 class="reveal">Kauan Silva<br>França</h1>
-    <p class="role reveal">Desenvolvedor &amp; Analista de Dados</p>
-    <p class="rotator reveal" aria-live="polite">&gt; construo <span class="word" id="rotWord">integrações entre sistemas</span><span class="caret" aria-hidden="true"></span></p>
-    <p class="desc reveal">Estudante de Ciência e Tecnologia – Ciência de Dados na UFABC e estagiário de tecnologia na Neosolar. Transformo dados e processos manuais em automações, integrações e modelos que resolvem problemas reais — com Python, Java, SQL e IA aplicada.</p>
-    <div class="actions reveal">
-      <a href="#projetos" class="btn btn-primary">Ver projetos</a>
-      <a href="#contato" class="btn btn-ghost">Falar comigo</a>
-    </div>
-
-    <div class="hero-stats reveal">
-      <div><strong data-count="9">0</strong><span>projetos e entregas</span></div>
-      <div><strong data-count="490" data-prefix="~">0</strong><span>falsos cancelamentos encontrados</span></div>
-      <div><strong data-count="99" data-suffix="%">0</strong><span>acurácia no modelo de crédito</span></div>
-      <div><strong data-count="2025" data-plain="1">0</strong><span>no ERP Sankhya desde</span></div>
-    </div>
-
-    <div class="hero-visual reveal" id="heroVisual">
-      <pre class="bonsai-art" id="bonsai">
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+<section class="wrap about" id="sobre">
+  <div class="small">01 / SOBRE MIM</div>
+  <div class="lotus-box" id="lotusBox">
+    <div class="lotus" id="lotus" role="img" aria-label="Flor de lótus interativa">
+<pre>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠤⠤⣄⠀⢀⠔⠱⢦⡀⢠⡞⠤⠽⢦⠀⢀⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠒⣄⡈⣷⠞⠀⠀⠀⣹⠏⠀⠐⠈⣼⠗⢩⣤⣾⢹⡄⣠⣖⠇⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⡯⠂⢙⢿⠀⠀⠀⡰⡍⠀⠀⠠⣡⡎⡌⣭⠃⡇⣷⠟⠁⣟⡇⠀⠀⠀⠀⠀⠀⠀⠀
@@ -369,472 +165,262 @@
 ⠀⠀⢀⣠⡤⠶⣿⣿⣿⣿⣿⡿⣿⡿⠿⣟⣝⠾⠿⢿⣿⠿⢿⢻⣿⠳⣶⣤⣀⡀⠀⠀⠀⠀⠀⠙⠛⠥⡀⠀⠀⠀
 ⠀⠸⠯⠄⣀⠀⠠⠤⠔⠒⠛⠉⠁⠀⠐⡟⠈⠁⠀⠀⠀⠀⠎⣺⠏⠀⠀⠉⠙⠛⠳⠶⠶⢄⣤⣠⡤⠞⠃⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣄⠀⠀⠀⢀⡠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠒⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-      </pre>
-      <span class="hint">mova o mouse ↔</span>
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠒⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</pre>
+      <div class="hint">Mova o cursor · toque para interagir</div>
+    </div>
+  </div>
+  <h2 class="big reveal">Tecnologia só importa quando resolve algo real.</h2>
+  <div class="cols reveal">
+    <p class="body muted">Sou Kauan Silva França, desenvolvedor e analista de dados. Estudo Ciência e Tecnologia – Ciência de Dados na UFABC e atuo como estagiário de tecnologia na Neosolar. Transformo dados e processos manuais em automações, integrações e modelos que resolvem problemas reais.</p>
+    <p class="body muted">No dia a dia, crio eventos em Java no ERP Sankhya, investigo integrações em Oracle e automatizo processos com n8n. Minha curiosidade conecta engenharia de dados, IA aplicada, segurança e experimentação criativa com front-end e Three.js.</p>
+  </div>
+</section>
+
+<section class="wrap projects" id="projetos" style="padding-top:0">
+  <div class="small">02 / PROJETOS &amp; ENTREGAS — 08</div>
+  <h2 class="big reveal">Do modelo ao chão de produção.</h2>
+  <div class="filters" role="group" aria-label="Filtros de projetos">
+    <button class="chip" data-f="all" aria-pressed="true">Todos</button>
+    <button class="chip" data-f="dados" aria-pressed="false">Dados &amp; IA</button>
+    <button class="chip" data-f="erp" aria-pressed="false">Backend &amp; ERP</button>
+    <button class="chip" data-f="auto" aria-pressed="false">Automação</button>
+  </div>
+  <div id="list">
+    <article class="row" data-cat="erp">
+      <div class="small muted">01 / Java · JAPE · Oracle · XML NF-e</div>
+      <h3>Evento Java no Portal de Importação de XML</h3>
+      <p class="body muted desc">Evento programável (JAPE) no ERP Sankhya que, assim que a NF-e do fornecedor chega, vincula cada item ao produto pelo código do fornecedor ou pelo EAN e corrige o NCM — sem ninguém digitar nada.</p>
+      <button class="det-btn" aria-expanded="false">Ver detalhes</button>
+      <div class="det"><span>Java</span><span>JAPE</span><span>Oracle</span><span>XML NF-e</span></div>
+    </article>
+    <article class="row" data-cat="erp">
+      <div class="small muted">02 / Oracle SQL · Views · Integração</div>
+      <h3>Investigação de Cancelamentos Indevidos — Intelipost</h3>
+      <p class="body muted desc">Análise de causa raiz na integração Sankhya–Intelipost (via TemAPI): pedidos eram cancelados por engano porque uma view de status cruzava o número da NF com notas antigas já canceladas.</p>
+      <button class="det-btn" aria-expanded="false">Ver detalhes</button>
+      <div class="det"><span>Oracle SQL</span><span>Views</span><span>Integração</span></div>
+    </article>
+    <article class="row" data-cat="dados">
+      <div class="small muted">03 / Python · Pandas · scikit-learn · Seaborn</div>
+      <h3>Classificação de Risco de Crédito</h3>
+      <p class="body muted desc">Modelo de inadimplência com Random Forest (100 árvores, classes balanceadas) treinado em dataset sintético de 1.000 registros, com divisão treino/teste estratificada 80/20.</p>
+      <p class="small"><a class="link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub</a></p>
+      <button class="det-btn" aria-expanded="false">Ver detalhes</button>
+      <div class="det"><span>Python</span><span>Pandas</span><span>scikit-learn</span><span>Seaborn</span></div>
+    </article>
+    <article class="row" data-cat="dados">
+      <div class="small muted">04 / Python · Gemini API · Logs</div>
+      <h3>Analisador de Logs com IA</h3>
+      <p class="body muted desc">Ferramenta em Python que varre logs de servidor, rankeia exceções (incluindo falhas Oracle) e usa a API do Gemini como assistente de troubleshooting, gerando diagnóstico de causa raiz e plano de mitigação.</p>
+      <p class="small"><a class="link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub</a></p>
+    </article>
+    <article class="row" data-cat="dados">
+      <div class="small muted">05 / Python · NetworkX · Gephi</div>
+      <h3>Rede Curricular de Matemática — Pesquisa UFABC</h3>
+      <p class="body muted desc">Conteúdos do 6º ao 9º ano (BNCC) modelados como grafo direcionado de pré-requisitos para revelar os tópicos-base e os gargalos pedagógicos do currículo. Resultou em artigo no formato IEEE.</p>
+      <p class="small"><a class="link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub</a></p>
+      <button class="det-btn" aria-expanded="false">Ver detalhes</button>
+      <div class="det"><span>Python</span><span>NetworkX</span><span>Gephi</span></div>
+    </article>
+    <article class="row" data-cat="auto">
+      <div class="small muted">06 / n8n · Apps Script · Webhooks · API Sankhya</div>
+      <h3>Cadastro Automático de Parceiros</h3>
+      <p class="body muted desc">Add-on em Google Apps Script lê o XML da NF-e recebido no Gmail e envia ao n8n (self-hosted, protegido por Cloudflare Access), que consulta o parceiro por CNPJ e cadastra, atualiza ou reativa no Sankhya via API.</p>
+    </article>
+    <article class="row" data-cat="erp">
+      <div class="small muted">07 / Java · Sankhya</div>
+      <h3>Automação da Central de Compras via Eventos Programáveis</h3>
+      <p class="body muted desc">Eventos Programáveis em Java integrados nativamente ao ERP Sankhya, interceptando ações de persistência para preencher dinamicamente os campos de Finalidade e Natureza da Operação, consolidando regras de negócio na camada da entidade.</p>
+      <p class="small"><a class="link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub</a></p>
+    </article>
+    <article class="row" data-cat="erp">
+      <div class="small muted">08 / Oracle · Dashboards</div>
+      <h3>Monitoramento em Tempo Real — ERP Sankhya</h3>
+      <p class="body muted desc">Painéis de monitoramento em tempo real sobre banco Oracle, com dashboards de rastreamento de atrasos em rotinas automatizadas e identificação imediata de travamentos, permitindo ações proativas antes que gargalos afetassem o negócio.</p>
+      <p class="small"><a class="link" href="https://github.com/kauan-franca1" target="_blank" rel="noopener">Ver no GitHub</a></p>
+    </article>
+  </div>
+</section>
+
+<section class="stack">
+  <div class="inner">
+    <div class="small">03 / FERRAMENTAS &amp; TRAJETÓRIA</div>
+    <h2 class="big reveal">Conectar. Investigar. Construir.</h2>
+    <div class="skills">
+      <div class="card reveal"><h4>Dados &amp; IA</h4><ul>
+        <li><i></i>Python</li><li><i></i>Pandas</li><li><i></i>scikit-learn</li><li><i></i>NetworkX</li><li><i></i>Matplotlib</li><li><i></i>Gephi</li><li><i></i>Gemini API</li></ul></div>
+      <div class="card reveal"><h4>Backend &amp; ERP</h4><ul>
+        <li><i></i>Java</li><li><i></i>Oracle PL/SQL</li><li><i></i>SQL</li><li><i></i>Sankhya</li><li><i></i>XML NF-e</li></ul></div>
+      <div class="card reveal"><h4>Automação</h4><ul>
+        <li><i></i>n8n</li><li><i></i>Apps Script</li><li><i></i>Celery</li><li><i></i>Zoho Flow</li><li><i></i>Deluge</li></ul></div>
+      <div class="card reveal"><h4>Front-end</h4><ul>
+        <li><i></i>JavaScript</li><li><i></i>React</li><li><i></i>Three.js</li></ul></div>
+      <div class="card reveal"><h4>Ferramentas</h4><ul>
+        <li><i></i>Git</li><li><i></i>Docker</li><li><i></i>WSL</li><li><i></i>Eclipse</li><li><i></i>iReport</li></ul></div>
+    </div>
+    <div class="exp">
+      <h5>Neosolar / Tecnologia, ERP &amp; Integrações</h5>
+      <p class="body">06/2025 — atual. Desenvolvimento Java e PL/SQL no Sankhya, integrações entre sistemas, automação de processos e monitoramento operacional.</p>
+      <h5>UFABC / Ciência e Tecnologia – Ciência de Dados</h5>
+      <p class="body">06/2024 — previsão 12/2028. Formação interdisciplinar, pesquisa em redes complexas e machine learning. Anteriormente, recepção e rotinas administrativas na Dasa, de 09/2023 a 06/2024. Português nativo e inglês avançado.</p>
     </div>
   </div>
 </section>
 
-<section id="sobre">
-  <div class="wrap">
-    <span class="eyebrow reveal">01 — Sobre mim</span>
-    <h2 class="reveal section-title">Tecnologia só importa quando resolve algo real.</h2>
-    <div class="sobre-grid">
-      <div class="reveal">
-        <p>Acredito que a tecnologia só atinge seu potencial máximo quando resolve problemas reais e facilita a vida das pessoas. Sou graduando do bacharelado em Ciência e Tecnologia – Ciência de Dados na UFABC (previsão 12/2028), onde desenvolvi um perfil analítico e voltado para a inovação.</p>
-        <p>Na Neosolar, aplico isso todo dia: crio eventos programáveis em Java no ERP Sankhya, investigo falhas de integração direto no banco Oracle, automatizo cadastros com n8n e mantenho painéis de monitoramento em tempo real.</p>
-      </div>
-      <div class="reveal">
-        <p>Minha jornada é guiada pelo desejo de construir infraestruturas mais inteligentes, transitando da engenharia de dados com Python e Java até o interesse crescente por segurança da informação, QA e troubleshooting automatizado com IA.</p>
-        <p>Além da tecnologia, também me dedico a projetos pessoais e criativos — do desenvolvimento front-end com Three.js à produção de conteúdo sobre cultura musical.</p>
-      </div>
-    </div>
+<section class="wrap contact" id="contato" style="max-width:1158px">
+  <div class="small">04 / PRÓXIMA CONVERSA</div>
+  <h2 class="big reveal">Vamos construir algo real.</h2>
+  <p class="body muted">Aberto a oportunidades em desenvolvimento backend, integrações, automação e dados.</p>
+  <div class="links">
+    <a class="pill" href="mailto:kauanf380@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Enviar e-mail</a>
+    <a class="t" href="https://www.linkedin.com/in/kauan-fran%C3%A7a-294b34359/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+    <a class="t" href="https://github.com/kauan-franca1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</a>
   </div>
+  <p class="small muted">© 2026 Kauan Silva França / kauanf380@gmail.com</p>
 </section>
-
-<section id="stack" class="band-dark">
-  <div class="wrap">
-    <span class="eyebrow reveal">02 — Stack</span>
-    <h2 class="reveal section-title">Ferramentas que uso para construir.</h2>
-
-    <div class="stack-grid reveal" id="stackGrid">
-      <div class="stack-cell">
-        <h3>Dados &amp; IA</h3>
-        <div class="tag-row">
-          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">scikit-learn</span>
-          <span class="tag">NetworkX</span><span class="tag">Matplotlib</span><span class="tag">Gephi</span><span class="tag">Gemini API</span>
-        </div>
-      </div>
-      <div class="stack-cell">
-        <h3>Backend &amp; ERP</h3>
-        <div class="tag-row">
-          <span class="tag">Java</span><span class="tag">Oracle PL/SQL</span><span class="tag">SQL avançado</span>
-          <span class="tag">Sankhya ERP</span><span class="tag">Eventos Programáveis</span><span class="tag">XML NF-e</span>
-        </div>
-      </div>
-      <div class="stack-cell">
-        <h3>Automação &amp; Integrações</h3>
-        <div class="tag-row">
-          <span class="tag">n8n</span><span class="tag">Google Apps Script</span><span class="tag">Celery</span>
-          <span class="tag">Zoho Deluge</span><span class="tag">Zoho Flow</span><span class="tag">Intelipost</span><span class="tag">PontoTel</span>
-        </div>
-      </div>
-      <div class="stack-cell">
-        <h3>Front-end &amp; Criativo</h3>
-        <div class="tag-row">
-          <span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Three.js</span><span class="tag">Design de Interface</span>
-        </div>
-      </div>
-      <div class="stack-cell">
-        <h3>Ferramentas</h3>
-        <div class="tag-row">
-          <span class="tag">Git / GitHub</span><span class="tag">Eclipse</span><span class="tag">Docker</span><span class="tag">WSL</span><span class="tag">iReport</span>
-        </div>
-      </div>
-      <div class="stack-cell">
-        <h3>Idiomas</h3>
-        <div class="tag-row">
-          <span class="tag">Português · nativo</span><span class="tag">Inglês · avançado</span>
-        </div>
-      </div>
-    </div>
-    <p class="stack-hint ink-soft reveal">● clique numa tecnologia marcada para ver os projetos em que ela foi usada</p>
-  </div>
-</section>
-
-<section id="projetos">
-  <div class="wrap">
-    <span class="eyebrow reveal">03 — Projetos em destaque</span>
-    <h2 class="reveal section-title">Do modelo ao chão de produção.</h2>
-
-    <div class="filters reveal" role="toolbar" aria-label="Filtrar projetos">
-      <button class="chip" data-cat="all" aria-pressed="true">Todos</button>
-      <button class="chip" data-cat="dados" aria-pressed="false">Dados &amp; IA</button>
-      <button class="chip" data-cat="erp" aria-pressed="false">Backend &amp; ERP</button>
-      <button class="chip" data-cat="auto" aria-pressed="false">Automação</button>
-      <span class="tech-pill" id="techPill">tecnologia: <strong id="techName"></strong><button id="techClear" aria-label="Limpar filtro de tecnologia">×</button></span>
-      <span class="proj-count" id="projCount"></span>
-    </div>
-
-    <div class="proj-list" id="projList">
-
-      <div class="proj reveal" data-cat="erp auto" data-tech="Java|Sankhya ERP|Eventos Programáveis|XML NF-e|Oracle PL/SQL">
-        <span class="proj-num">01</span>
-        <div class="proj-body">
-          <h3>Evento Java no Portal de Importação de XML</h3>
-          <div class="proj-metric"><span class="num" data-count="6">0</span> <span>vínculos criados sozinhos · 3 notas validadas em homologação</span></div>
-          <p>Evento programável (JAPE) no ERP Sankhya que, assim que a NF-e do fornecedor chega, vincula cada item ao produto pelo código do fornecedor ou pelo EAN e corrige o NCM — sem ninguém digitar nada.</p>
-          <div class="proj-tags"><span>Java</span><span>JAPE</span><span>Oracle</span><span>XML NF-e</span></div>
-          <button class="more" aria-expanded="false"><span class="plus">+</span> como funciona</button>
-          <div class="details"><div>
-            <div class="flow" data-flow>
-              <div class="flow-steps">
-                <div class="flow-step"><b>01 · afterInsert</b>XML da NF-e entra na TGFIXN</div>
-                <div class="flow-step"><b>02 · parse</b>lê cada item (cProd, EAN, NCM)</div>
-                <div class="flow-step"><b>03 · busca</b>vínculo TGFPAP → EAN na TGFPRO/TGFBAR</div>
-                <div class="flow-step"><b>04 · grava</b>NCM atualizado + vínculo criado</div>
-              </div>
-              <div class="flow-bar"><button class="btn btn-ghost" style="padding:9px 18px; font-size:13px;" data-run>▶ simular</button><span class="flow-log" data-log>pronto para rodar</span></div>
-            </div>
-            <ul>
-              <li>Roda na mesma transação do portal: sem conexão paralela, sem lock.</li>
-              <li>Ignora "SEM GTIN" e EANs ligados a mais de um produto para não criar vínculo errado.</li>
-              <li>Não sobrescreve a descrição padronizada do produto; erros vão só para o log.</li>
-            </ul>
-          </div></div>
-        </div>
-        <span class="proj-internal">projeto interno</span>
-      </div>
-
-      <div class="proj reveal" data-cat="erp auto" data-tech="Oracle PL/SQL|SQL avançado|Intelipost|Sankhya ERP">
-        <span class="proj-num">02</span>
-        <div class="proj-body">
-          <h3>Investigação de Cancelamentos Indevidos — Intelipost</h3>
-          <div class="proj-metric">~<span class="num" data-count="490">0</span> <span>falsos cancelamentos encontrados em 13 meses</span></div>
-          <p>Análise de causa raiz na integração Sankhya–Intelipost (via TemAPI): pedidos eram cancelados por engano porque uma view de status cruzava o número da NF com notas antigas já canceladas.</p>
-          <div class="proj-tags"><span>Oracle SQL</span><span>Views</span><span>Integração</span></div>
-          <button class="more" aria-expanded="false"><span class="plus">+</span> detalhes</button>
-          <div class="details"><div><ul>
-            <li>Investigação só com consultas de leitura em produção — nada alterado sem validação.</li>
-            <li>Correção simulada na base de teste: elimina os falsos positivos e mantém todos os 40 cancelamentos reais dos últimos 180 dias.</li>
-            <li>View corrigida mantém o mesmo nome e colunas, sem mudança para o fornecedor.</li>
-          </ul></div></div>
-        </div>
-        <span class="proj-internal">projeto interno</span>
-      </div>
-
-      <div class="proj reveal" data-cat="dados" data-tech="Python|Pandas|scikit-learn|Matplotlib">
-        <span class="proj-num">03</span>
-        <div class="proj-body">
-          <h3>Classificação de Risco de Crédito</h3>
-          <div class="proj-metric"><span class="num" data-count="99" data-suffix="%">0</span> <span>acurácia · precisão e recall 99% · AUC-ROC 0,997</span></div>
-          <p>Modelo de inadimplência com Random Forest (100 árvores, classes balanceadas) treinado em dataset sintético de 1.000 registros, com divisão treino/teste estratificada 80/20.</p>
-          <div class="proj-tags"><span>Python</span><span>Pandas</span><span>scikit-learn</span><span>Seaborn</span></div>
-          <button class="more" aria-expanded="false"><span class="plus">+</span> metodologia</button>
-          <div class="details"><div><ul>
-            <li>EDA, encoding de variáveis categóricas e avaliação com classification report e matriz de confusão.</li>
-            <li>Matriz de confusão e gráfico de importância das features com Matplotlib/Seaborn.</li>
-            <li>Predição em tempo real para novos clientes.</li>
-          </ul></div></div>
-        </div>
-        <a class="proj-link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub <span class="arr">→</span></a>
-      </div>
-
-      <div class="proj reveal" data-cat="dados auto" data-tech="Python|Gemini API|Oracle PL/SQL">
-        <span class="proj-num">04</span>
-        <div class="proj-body">
-          <h3>Analisador de Logs com IA</h3>
-          <div class="proj-metric">SRE <span>automatizado</span></div>
-          <p>Ferramenta em Python que varre logs de servidor, rankeia exceções (incluindo falhas Oracle) e usa a API do Gemini como assistente de troubleshooting, gerando diagnóstico de causa raiz e plano de mitigação.</p>
-          <div class="proj-tags"><span>Python</span><span>Gemini API</span><span>Logs</span></div>
-        </div>
-        <a class="proj-link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub <span class="arr">→</span></a>
-      </div>
-
-      <div class="proj reveal" data-cat="dados" data-tech="Python|NetworkX|Matplotlib|Gephi">
-        <span class="proj-num">05</span>
-        <div class="proj-body">
-          <h3>Rede Curricular de Matemática — Pesquisa UFABC</h3>
-          <div class="proj-metric"><span class="num" data-count="256">0</span> <span>arestas mapeadas</span></div>
-          <p>Conteúdos do 6º ao 9º ano (BNCC) modelados como grafo direcionado de pré-requisitos para revelar os tópicos-base e os gargalos pedagógicos do currículo. Resultou em artigo no formato IEEE.</p>
-          <div class="proj-tags"><span>Python</span><span>NetworkX</span><span>Gephi</span></div>
-          <button class="more" aria-expanded="false"><span class="plus">+</span> métricas usadas</button>
-          <div class="details"><div><ul>
-            <li>Grau de saída: tópicos "hub" que abrem caminho para muitos outros.</li>
-            <li>Betweenness: gargalos que funcionam como ponte obrigatória entre trilhas.</li>
-            <li>PageRank: importância global de cada tópico; grafo exportado em GraphML para o Gephi.</li>
-          </ul></div></div>
-        </div>
-        <a class="proj-link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub <span class="arr">→</span></a>
-      </div>
-
-      <div class="proj reveal" data-cat="dados" data-tech="JavaScript|Python">
-        <span class="proj-num">06</span>
-        <div class="proj-body">
-          <h3>Painel “Ressaca Eleitoral”</h3>
-          <div class="proj-metric">1988–2026 <span>Ibovespa · dólar · S&amp;P 500</span></div>
-          <p>Painel que compara a variação do Ibovespa e do dólar com a do S&amp;P 500 no dia seguinte a cada eleição, para ver como o mercado reage ao resultado das urnas.</p>
-          <div class="proj-tags"><span>HTML</span><span>JavaScript</span><span>Análise de dados</span></div>
-        </div>
-        <span class="proj-internal">projeto pessoal</span>
-      </div>
-
-      <div class="proj reveal" data-cat="auto erp" data-tech="n8n|Google Apps Script|Sankhya ERP|XML NF-e">
-        <span class="proj-num">07</span>
-        <div class="proj-body">
-          <h3>Cadastro Automático de Parceiros</h3>
-          <div class="proj-metric">XML → ERP <span>sem digitação</span></div>
-          <p>Add-on em Google Apps Script lê o XML da NF-e recebido no Gmail e envia ao n8n (self-hosted, protegido por Cloudflare Access), que consulta o parceiro por CNPJ e cadastra, atualiza ou reativa no Sankhya via API.</p>
-          <div class="proj-tags"><span>n8n</span><span>Apps Script</span><span>Webhooks</span><span>API Sankhya</span></div>
-        </div>
-        <span class="proj-internal">projeto interno</span>
-      </div>
-
-      <div class="proj reveal" data-cat="erp" data-tech="Java|Sankhya ERP|Eventos Programáveis">
-        <span class="proj-num">08</span>
-        <div class="proj-body">
-          <h3>Automação da Central de Compras via Eventos Programáveis</h3>
-          <div class="proj-metric"><span class="num" data-count="0">0</span> <span>preenchimentos manuais incorretos</span></div>
-          <p>Eventos Programáveis em Java integrados nativamente ao ERP Sankhya, interceptando ações de persistência para preencher dinamicamente os campos de Finalidade e Natureza da Operação, consolidando regras de negócio na camada da entidade.</p>
-          <div class="proj-tags"><span>Java</span><span>Sankhya</span></div>
-        </div>
-        <a class="proj-link" href="https://github.com/kauan-franca1/apresentacao" target="_blank" rel="noopener">Ver no GitHub <span class="arr">→</span></a>
-      </div>
-
-      <div class="proj reveal" data-cat="erp" data-tech="Oracle PL/SQL|Sankhya ERP|SQL avançado">
-        <span class="proj-num">09</span>
-        <div class="proj-body">
-          <h3>Monitoramento em Tempo Real — ERP Sankhya</h3>
-          <div class="proj-metric">24/7 <span>observabilidade</span></div>
-          <p>Painéis de monitoramento em tempo real sobre banco Oracle, com dashboards de rastreamento de atrasos em rotinas automatizadas e identificação imediata de travamentos, permitindo ações proativas antes que gargalos afetassem o negócio.</p>
-          <div class="proj-tags"><span>Oracle</span><span>Dashboards</span></div>
-        </div>
-        <a class="proj-link" href="https://github.com/kauan-franca1" target="_blank" rel="noopener">Ver perfil <span class="arr">→</span></a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="experiencia" class="band-dark">
-  <div class="wrap">
-    <span class="eyebrow reveal">04 — Experiência</span>
-    <h2 class="reveal section-title">Onde venho aplicando isso.</h2>
-
-    <div class="timeline reveal">
-      <div class="t-item">
-        <span class="t-date">06/2025 — Atual</span>
-        <h3>Estagiário de Tecnologia (ERP &amp; Integrações) — Neosolar</h3>
-        <p>Desenvolvimento no ERP Sankhya (Java, PL/SQL Oracle), integrações de sistemas (Intelipost, PontoTel, Zoho Flow, n8n) e automação de processos internos.</p>
-        <button class="more" aria-expanded="false"><span class="plus">+</span> principais entregas</button>
-        <div class="details"><div><ul>
-          <li>Evento Java no Portal de Importação de XML que vincula produtos e corrige NCM automaticamente.</li>
-          <li>Causa raiz de cancelamentos indevidos na integração com a Intelipost (~490 casos em 13 meses).</li>
-          <li>Cadastro automático de parceiros com n8n + Google Apps Script.</li>
-          <li>Monitoramento de ponto em Python/Celery com relatórios por e-mail (API PontoTel).</li>
-          <li>Funções PL/SQL para relatórios de expedição no iReport/JasperReports.</li>
-        </ul></div></div>
-      </div>
-      <div class="t-item">
-        <span class="t-date">06/2024 — previsão 12/2028</span>
-        <h3>Ciência e Tecnologia – Ciência de Dados — UFABC</h3>
-        <p>Formação interdisciplinar com foco em Ciência de Dados, incluindo pesquisa aplicada em análise de redes complexas e machine learning.</p>
-      </div>
-      <div class="t-item">
-        <span class="t-date">09/2023 — 06/2024</span>
-        <h3>Recepcionista / Administrativo — Dasa</h3>
-        <p>Atendimento a pacientes, cobrança de exames, fechamento de caixa e planilhas de controle.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contato">
-  <div class="wrap contato-inner">
-    <span class="eyebrow reveal">05 — Contato</span>
-    <h2 class="reveal">Vamos conversar.</h2>
-    <p class="reveal ink-soft" style="margin-top:16px;">Aberto a oportunidades em desenvolvimento backend, integrações, automação e dados. Responder rápido é meu padrão.</p>
-    <div class="contato-actions reveal">
-      <a href="mailto:kauanf380@gmail.com" class="btn btn-accent">Enviar e-mail</a>
-      <button class="btn btn-ghost" id="copyEmail" data-email="kauanf380@gmail.com">Copiar e-mail</button>
-      <a href="Kauan_Franca_Curriculo.pdf" class="btn btn-ghost" download>Baixar currículo</a>
-      <a href="https://www.linkedin.com/in/kauan-fran%C3%A7a-294b34359/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
-      <a href="https://github.com/kauan-franca1" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <span>© 2026 Kauan Silva França</span>
-    <span>Feito com Python, café e um pouco de Three.js</span>
-  </div>
-</footer>
-
-<div class="toast" id="toast" role="status"></div>
 
 <script>
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // ---------- Tema (segue o sistema; alterna em memória) ----------
-  const root = document.documentElement;
-  const toggle = document.getElementById('themeToggle');
-  const icon = document.getElementById('themeIcon');
-  function setIcon(theme){
-    icon.innerHTML = theme === 'dark'
-      ? '<path d="M21 12.6A9 9 0 1 1 11.4 3 7.2 7.2 0 0 0 21 12.6Z"/>'
-      : '<circle cx="12" cy="12" r="4.2"></circle><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>';
-  }
-  function setTheme(t){ root.setAttribute('data-theme', t); setIcon(t); }
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
-  toggle.addEventListener('click', () => setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
-
-  // ---------- Header + linha de progresso + link ativo ----------
-  const header = document.getElementById('siteHeader');
-  const fill = document.getElementById('currentFill');
-  const navLinks = [...document.querySelectorAll('#navLinks a')];
-  const sections = navLinks.map(a => document.querySelector(a.getAttribute('href')));
-  function onScroll(){
-    header.classList.toggle('scrolled', window.scrollY > 40);
-    const h = document.documentElement;
-    const height = h.scrollHeight - h.clientHeight;
-    fill.style.height = (height > 0 ? (h.scrollTop / height) * 100 : 0) + '%';
-    let current = -1;
-    sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < window.innerHeight * 0.4) current = i; });
-    navLinks.forEach((a, i) => a.classList.toggle('active', i === current));
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // ---------- Contadores ----------
-  function countUp(el){
-    const target = parseFloat(el.dataset.count);
-    const prefix = el.dataset.prefix || '', suffix = el.dataset.suffix || '';
-    const plain = el.dataset.plain === '1';
-    const fmt = v => plain ? String(Math.round(v)) : Math.round(v).toLocaleString('pt-BR');
-    if (reduceMotion || target === 0){ el.textContent = prefix + fmt(target) + suffix; return; }
-    const start = plain ? target - 25 : 0, dur = 1200, t0 = performance.now();
-    (function step(now){
-      const p = Math.min((now - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
-      el.textContent = prefix + fmt(start + (target - start) * e) + suffix;
-      if (p < 1) requestAnimationFrame(step);
-    })(t0);
-  }
-
-  // ---------- Reveal on scroll ----------
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (!entry.isIntersecting) return;
-      setTimeout(() => entry.target.classList.add('in'), i * 40);
-      entry.target.querySelectorAll('[data-count]').forEach(countUp);
-      io.unobserve(entry.target);
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
-  if (reduceMotion) revealEls.forEach(el => { el.classList.add('in'); el.querySelectorAll('[data-count]').forEach(countUp); });
-
-  // ---------- Texto rotativo do hero ----------
-  const words = ['integrações entre sistemas', 'automações no ERP Sankhya', 'modelos de machine learning', 'consultas SQL que acham a causa raiz', 'painéis de dados'];
-  const rot = document.getElementById('rotWord');
-  if (!reduceMotion){
-    let wi = 0, ci = words[0].length, deleting = true;
-    setTimeout(function tick(){
-      const w = words[wi];
-      if (deleting){ ci--; if (ci <= 0){ deleting = false; wi = (wi + 1) % words.length; } }
-      else { ci++; if (ci >= words[wi].length){ deleting = true; rot.textContent = words[wi]; return setTimeout(tick, 1800); } }
-      rot.textContent = (deleting ? w : words[wi]).slice(0, Math.max(ci, 0));
-      setTimeout(tick, deleting ? 28 : 55);
-    }, 1800);
-  }
-
-  // ---------- Bonsai segue o mouse ----------
-  const hv = document.getElementById('heroVisual'), bonsai = document.getElementById('bonsai');
-  if (!reduceMotion && window.matchMedia('(hover: hover)').matches){
-    hv.addEventListener('mousemove', e => {
-      const r = hv.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-      bonsai.style.transform = `perspective(700px) rotateY(${x * 10}deg) rotateX(${-y * 8}deg) translateX(${x * 12}px)`;
-    });
-    hv.addEventListener('mouseleave', () => { bonsai.style.transform = ''; });
-  } else { hv.querySelector('.hint').style.display = 'none'; }
-
-  // ---------- Filtros de projetos ----------
-  const projects = [...document.querySelectorAll('#projList .proj')];
-  const chips = [...document.querySelectorAll('.chip')];
-  const techPill = document.getElementById('techPill'), techName = document.getElementById('techName');
-  const projCount = document.getElementById('projCount');
-  const state = { cat: 'all', tech: null };
-  function applyFilter(){
-    let shown = 0;
-    projects.forEach(p => {
-      const okCat = state.cat === 'all' || p.dataset.cat.split(' ').includes(state.cat);
-      const okTech = !state.tech || p.dataset.tech.split('|').includes(state.tech);
-      const show = okCat && okTech;
-      const wasHidden = p.classList.contains('hide');
-      p.classList.toggle('hide', !show);
-      if (show){
-        shown++;
-        p.querySelector('.proj-num').textContent = String(shown).padStart(2, '0');
-        if (wasHidden){ p.classList.add('in'); p.classList.remove('pop'); void p.offsetWidth; p.classList.add('pop'); }
-      }
-    });
-    projCount.textContent = shown + (shown === 1 ? ' projeto' : ' projetos');
-    techPill.classList.toggle('on', !!state.tech);
-    techName.textContent = state.tech || '';
-  }
-  chips.forEach(c => c.addEventListener('click', () => {
-    state.cat = c.dataset.cat;
-    chips.forEach(x => x.setAttribute('aria-pressed', String(x === c)));
-    applyFilter();
-  }));
-  document.getElementById('techClear').addEventListener('click', () => { state.tech = null; applyFilter(); });
-
-  // tags da stack viram filtros quando algum projeto usa a tecnologia
-  const usedTech = new Set(projects.flatMap(p => p.dataset.tech.split('|')));
-  document.querySelectorAll('#stackGrid .tag').forEach(tag => {
-    const name = tag.textContent.trim();
-    if (!usedTech.has(name)) return;
-    const btn = document.createElement('button');
-    btn.className = 'tag'; btn.textContent = name; btn.title = 'Ver projetos com ' + name;
-    btn.addEventListener('click', () => {
-      state.tech = name; state.cat = 'all';
-      chips.forEach(x => x.setAttribute('aria-pressed', String(x.dataset.cat === 'all')));
-      applyFilter();
-      document.getElementById('projetos').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
-    });
-    tag.replaceWith(btn);
+/* ---------- tema ---------- */
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  function apply(t){root.setAttribute('data-theme',t);btn.setAttribute('aria-pressed',t==='dark');btn.textContent=t==='dark'?'Modo claro':'Modo noturno';}
+  var saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+  apply(saved||'light');
+  btn.addEventListener('click',function(){
+    var t=root.getAttribute('data-theme')==='dark'?'light':'dark';apply(t);
+    try{localStorage.setItem('theme',t)}catch(e){}
   });
-  applyFilter();
+})();
 
-  // brilho que segue o mouse nos cards
-  projects.forEach(p => p.addEventListener('mousemove', e => {
-    const r = p.getBoundingClientRect();
-    p.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-    p.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  }));
-
-  // ---------- Detalhes expansíveis ----------
-  document.querySelectorAll('.more').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') !== 'true';
-      btn.setAttribute('aria-expanded', String(open));
-      btn.nextElementSibling.classList.toggle('open', open);
+/* ---------- título animado letra a letra ---------- */
+(function(){
+  var h=document.getElementById('title'), txt=h.textContent, out='', i=0;
+  txt.split(' ').forEach(function(w,wi){
+    out+=(wi?' ':'')+'<span class="w" aria-hidden="true">';
+    w.split('').forEach(function(ch){
+      out+='<span class="c" style="transition-delay:'+(i++*35)+'ms">'+ch.replace('&','&amp;').replace('<','&lt;').replace('>','&gt;')+'</span>';
     });
+    out+='</span>';
   });
+  h.innerHTML=out;
+  requestAnimationFrame(function(){requestAnimationFrame(function(){h.classList.add('in')})});
+})();
 
-  // ---------- Simulação do evento Java ----------
-  document.querySelectorAll('[data-flow]').forEach(flow => {
-    const steps = [...flow.querySelectorAll('.flow-step')];
-    const log = flow.querySelector('[data-log]');
-    const msgs = [
-      'NF-e 11444915 importada (Kalunga)…',
-      '3 itens lidos do XML…',
-      '546123 → EAN 7896075300489 → produto 20476',
-      '2 vínculos criados · NCM conferido ✓'
-    ];
-    let running = false;
-    flow.querySelector('[data-run]').addEventListener('click', () => {
-      if (running) return;
-      running = true;
-      steps.forEach(s => s.classList.remove('on'));
-      steps.forEach((s, i) => setTimeout(() => {
-        s.classList.add('on'); log.textContent = msgs[i];
-        if (i === steps.length - 1) running = false;
-      }, (reduceMotion ? 0 : 650) * i));
-    });
-  });
+/* ---------- reveal on scroll ---------- */
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.15});
+  els.forEach(function(e,i){e.style.transitionDelay=(i%5)*80+'ms';io.observe(e)});
+})();
 
-  // ---------- Copiar e-mail ----------
-  const toast = document.getElementById('toast');
-  function showToast(msg){ toast.textContent = msg; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2200); }
-  document.getElementById('copyEmail').addEventListener('click', async e => {
-    const email = e.currentTarget.dataset.email;
-    try { await navigator.clipboard.writeText(email); showToast('E-mail copiado: ' + email); }
-    catch { showToast(email); }
+/* ---------- lótus 3D ---------- */
+(function(){
+  var box=document.getElementById('lotusBox'), l=document.getElementById('lotus');
+  function tilt(x,y){
+    var r=box.getBoundingClientRect(), nx=(x-r.left)/r.width-.5, ny=(y-r.top)/r.height-.5;
+    l.style.transform='rotateY('+(nx*24)+'deg) rotateX('+(-ny*24)+'deg)';
+  }
+  box.addEventListener('mousemove',function(e){tilt(e.clientX,e.clientY)});
+  box.addEventListener('touchmove',function(e){var t=e.touches[0];tilt(t.clientX,t.clientY)},{passive:true});
+  box.addEventListener('mouseleave',function(){l.style.transform='none'});
+  box.addEventListener('touchend',function(){l.style.transform='none'});
+})();
+
+/* ---------- animação da lótus ---------- */
+(function(){
+  var pre=document.querySelector('#lotus pre'), box=document.getElementById('lotusBox');
+  var lines=pre.textContent.split('\n');
+  pre.innerHTML=lines.map(function(l,i){return '<span class="ln" style="--i:'+i+';--n:'+lines.length+'">'+l+'</span>'}).join('');
+  if(!('IntersectionObserver' in window)){box.classList.add('go');return;}
+  new IntersectionObserver(function(e,o){if(e[0].isIntersecting){box.classList.add('go');o.disconnect()}},{threshold:.3}).observe(box);
+})();
+
+/* ---------- ícones das habilidades ---------- */
+(function(){
+  function svg(p){return '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+p+'</svg>'}
+  var SV={
+    db:svg('<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/>'),
+    layers:svg('<path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/>'),
+    code:svg('<path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/>'),
+    file:svg('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/>'),
+    net:svg('<circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="m11 7-5 10M13 7l5 10M7 19h10"/>')
+  };
+  var SI={'Python':'python','Pandas':'pandas','scikit-learn':'scikitlearn','Matplotlib':'matplotlib','Gephi':'gephi','Gemini API':'googlegemini',
+    'Java':'openjdk','Oracle PL/SQL':'oracle','n8n':'n8n','Apps Script':'googleappsscript','Celery':'celery','Zoho Flow':'zoho',
+    'JavaScript':'javascript','React':'react','Three.js':'threedotjs','Git':'git','Docker':'docker','WSL':'windows','Eclipse':'eclipseide'};
+  var LOCAL={'SQL':'db','Sankhya':'layers','XML NF-e':'code','Deluge':'code','iReport':'file','NetworkX':'net'};
+  function inline(key){var s=document.createElement('span');s.className='ic';s.innerHTML=SV[key];return s}
+  document.querySelectorAll('.card li').forEach(function(li){
+    var name=li.textContent.trim(), old=li.querySelector('i'), node;
+    if(LOCAL[name]){node=inline(LOCAL[name])}
+    else{
+      node=document.createElement('img');node.className='ic';node.alt='';node.loading='lazy';
+      node.src='https://cdn.simpleicons.org/'+(SI[name]||'')+'/ffffff';
+      node.onerror=function(){var f=inline('net');if(node.parentNode)node.parentNode.replaceChild(f,node)};
+    }
+    if(old)li.replaceChild(node,old);else li.insertBefore(node,li.firstChild);
   });
+})();
+
+/* ---------- filtros e detalhes ---------- */
+(function(){
+  var chips=document.querySelectorAll('.chip'), rows=document.querySelectorAll('.row');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+    var f=c.dataset.f;
+    rows.forEach(function(r){r.hidden=!(f==='all'||r.dataset.cat===f)});
+  })});
+  document.querySelectorAll('.det-btn').forEach(function(b){b.addEventListener('click',function(){
+    var d=b.nextElementSibling, open=d.classList.toggle('open');
+    b.setAttribute('aria-expanded',open);b.textContent=open?'Ocultar detalhes':'Ver detalhes';
+  })});
+})();
+
+/* ---------- shader líquido (WebGL) ---------- */
+(function(){
+  var cv=document.getElementById('liquid'), gl=cv.getContext('webgl');
+  if(!gl)return;
+  var vs='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+  var fs='precision highp float;uniform vec2 r;uniform vec2 m;uniform float t;'+
+  'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}'+
+  'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);'+
+  'return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}'+
+  'float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p*=2.02;a*=.5;}return v;}'+
+  'vec3 pal(float x){vec3 a=vec3(.56,.82,.62),b=vec3(.96,.72,.24),c=vec3(.98,.52,.03),d=vec3(.72,.20,.13),e=vec3(.07,.05,.05);'+
+  'vec3 o=mix(a,b,smoothstep(0.,.25,x));o=mix(o,c,smoothstep(.2,.45,x));o=mix(o,d,smoothstep(.4,.68,x));o=mix(o,e,smoothstep(.65,.95,x));'+
+  'o=mix(o,c,smoothstep(.95,1.12,x));o=mix(o,b,smoothstep(1.1,1.3,x));return o;}'+
+  'void main(){vec2 uv=gl_FragCoord.xy/r;vec2 q=(gl_FragCoord.xy-.5*r)/r.y;'+
+  'vec2 mm=(m-.5*r)/r.y;q+=.35*exp(-6.*length(q-mm))*normalize(q-mm+1e-4);'+
+  'float a=fbm(q*1.1+vec2(t*.05,-t*.04));'+
+  'float b=fbm(q*1.1+a*1.6+vec2(-t*.04,t*.05));'+
+  'float s=smoothstep(.1,.9,b)*1.3;'+
+  'vec3 col=pal(s);'+
+  'gl_FragColor=vec4(col,1.);}';
+  function sh(type,src){var s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return s}
+  var pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));
+  gl.linkProgram(pr);if(!gl.getProgramParameter(pr,gl.LINK_STATUS))return;gl.useProgram(pr);
+  var b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);
+  gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+  var loc=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  var ur=gl.getUniformLocation(pr,'r'),um=gl.getUniformLocation(pr,'m'),ut=gl.getUniformLocation(pr,'t');
+  var mx=0,my=0,tx=0,ty=0,vis=true,reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function size(){var d=Math.min(devicePixelRatio||1,1.5);cv.width=cv.clientWidth*d;cv.height=cv.clientHeight*d;gl.viewport(0,0,cv.width,cv.height);tx=mx=cv.width/2;ty=my=cv.height/2}
+  addEventListener('resize',size);size();
+  cv.parentElement.addEventListener('mousemove',function(e){
+    var r=cv.getBoundingClientRect(),d=cv.width/r.width;tx=(e.clientX-r.left)*d;ty=cv.height-(e.clientY-r.top)*d;
+  });
+  new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+  function frame(ms){
+    if(vis){mx+=(tx-mx)*.06;my+=(ty-my)*.06;
+      gl.uniform2f(ur,cv.width,cv.height);gl.uniform2f(um,mx,my);gl.uniform1f(ut,reduce?0:ms/1000);
+      gl.drawArrays(gl.TRIANGLE_STRIP,0,4);}
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
 </script>
-
 </body>
 </html>
